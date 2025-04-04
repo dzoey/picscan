@@ -1,0 +1,1567 @@
+2025-04-01 00:06:32,405 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 00:06:32,406 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 00:06:32,406 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 00:06:32,409 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 00:06:32,580 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:06:32,655 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 00:06:32,731 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 00:06:32,807 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:06:32,886 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 00:06:32,961 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 00:06:33,033 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 00:06:33,369 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 00:06:33,511 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 00:06:33,608 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 00:06:33,631 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 00:06:34,007 - chromadb.config - DEBUG - Starting component System
+2025-04-01 00:06:34,007 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 00:06:34,008 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 00:06:34,008 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 00:06:34,014 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 00:06:34,015 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 00:06:34,015 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 00:06:34,015 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 00:06:34,016 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 00:06:34,097 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 00:06:34,101 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 00:06:34,102 - rag_app - DEBUG - Initialization complete
+2025-04-01 00:06:34,132 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.177:5000
+2025-04-01 00:06:34,133 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-01 00:06:34,135 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 00:06:41,371 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 00:06:41,372 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 00:06:41,372 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 00:06:41,374 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 00:06:41,597 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:06:41,673 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 00:06:41,749 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 00:06:41,824 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:06:41,955 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 00:06:42,148 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 00:06:42,229 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 00:06:42,559 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 00:06:42,765 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 00:06:42,861 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 00:06:42,881 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 00:06:43,273 - chromadb.config - DEBUG - Starting component System
+2025-04-01 00:06:43,273 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 00:06:43,273 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 00:06:43,274 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 00:06:43,277 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 00:06:43,277 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 00:06:43,278 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 00:06:43,278 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 00:06:43,278 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 00:06:43,333 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 00:06:43,336 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 00:06:43,336 - rag_app - DEBUG - Initialization complete
+2025-04-01 00:06:43,348 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 00:06:43,349 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 00:07:54,270 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 00:07:54,272 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 00:07:54,272 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 00:07:54,276 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 00:07:54,357 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:07:54,387 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 00:07:54,422 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 00:07:54,456 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:07:54,489 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 00:07:54,523 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 00:07:54,947 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 00:07:55,223 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 00:07:55,343 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 00:07:55,388 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 00:07:55,412 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 00:07:55,856 - chromadb.config - DEBUG - Starting component System
+2025-04-01 00:07:55,857 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 00:07:55,857 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 00:07:55,857 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 00:07:55,862 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 00:07:55,862 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 00:07:55,862 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 00:07:55,863 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 00:07:55,863 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 00:07:55,923 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 00:07:55,926 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 00:07:55,926 - rag_app - DEBUG - Initialization complete
+2025-04-01 00:07:55,943 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.177:5000
+2025-04-01 00:07:55,943 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-01 00:07:55,945 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 00:08:04,956 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 00:08:04,957 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 00:08:04,957 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 00:08:04,961 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 00:08:05,029 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:08:05,064 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 00:08:05,103 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 00:08:05,134 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 00:08:05,164 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 00:08:05,200 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 00:08:05,234 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 00:08:05,468 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 00:08:05,597 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 00:08:05,651 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 00:08:05,674 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 00:08:06,108 - chromadb.config - DEBUG - Starting component System
+2025-04-01 00:08:06,108 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 00:08:06,108 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 00:08:06,108 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 00:08:06,113 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 00:08:06,113 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 00:08:06,113 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 00:08:06,113 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 00:08:06,113 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 00:08:06,173 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 00:08:06,176 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 00:08:06,176 - rag_app - DEBUG - Initialization complete
+2025-04-01 00:08:06,189 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 00:08:06,190 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 00:08:19,480 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 00:08:19,481 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f58e5d94ec0>
+2025-04-01 00:08:19,484 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 00:08:19,493 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 00:08:19,494 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 00:08:19,494 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 00:08:19,502 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 00:08:19,503 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 04:08:19 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 00:08:19,504 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 00:08:19,504 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 00:08:19,505 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 00:08:19,505 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 00:08:19,505 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 00:08:19,506 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 00:08:19,506 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 00:08:19,506 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 00:08:19,506 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 00:08:19,506 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 00:08:19,506 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 00:08:19,524 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 00:08:19] "GET / HTTP/1.1" 200 -
+2025-04-01 11:46:48,830 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 11:46:51,069 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 11:47:01,268 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 11:47:01,269 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 11:47:01,269 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 11:47:01,272 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 11:47:01,381 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:47:01,425 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 11:47:01,463 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 11:47:01,504 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:47:01,542 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 11:47:01,596 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 11:47:01,633 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 11:47:01,892 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 11:47:02,030 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 11:47:02,099 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 11:47:02,126 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 11:47:02,660 - chromadb.config - DEBUG - Starting component System
+2025-04-01 11:47:02,660 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 11:47:02,660 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 11:47:02,660 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 11:47:02,665 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 11:47:02,665 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 11:47:02,665 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 11:47:02,665 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 11:47:02,665 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 11:47:02,736 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 11:47:02,739 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 11:47:02,740 - rag_app - DEBUG - Initialization complete
+2025-04-01 11:47:02,762 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 11:47:02,763 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 11:47:37,734 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 11:47:39,721 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 11:47:47,570 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 11:47:47,572 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 11:47:47,572 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 11:47:47,574 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 11:47:47,740 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:47:47,814 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 11:47:47,887 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 11:47:47,957 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:47:48,027 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 11:47:48,103 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 11:47:48,177 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 11:47:48,468 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 11:47:48,640 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 11:47:48,741 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 11:47:48,764 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 11:47:49,241 - chromadb.config - DEBUG - Starting component System
+2025-04-01 11:47:49,241 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 11:47:49,242 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 11:47:49,242 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 11:47:49,246 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 11:47:49,246 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 11:47:49,247 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 11:47:49,247 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 11:47:49,247 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 11:47:49,314 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 11:47:49,317 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 11:47:49,318 - rag_app - DEBUG - Initialization complete
+2025-04-01 11:47:49,337 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 11:47:49,338 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 11:48:27,759 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 11:48:27,761 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 11:48:27,761 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 11:48:27,764 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 11:48:27,955 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:48:28,031 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 11:48:28,108 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 11:48:28,183 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:48:28,258 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 11:48:28,333 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 11:48:28,405 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 11:48:28,706 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 11:48:28,876 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 11:48:29,047 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 11:48:29,073 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 11:48:29,511 - chromadb.config - DEBUG - Starting component System
+2025-04-01 11:48:29,511 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 11:48:29,512 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 11:48:29,512 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 11:48:29,516 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 11:48:29,516 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 11:48:29,516 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 11:48:29,516 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 11:48:29,516 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 11:48:29,573 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 11:48:29,576 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 11:48:29,577 - rag_app - DEBUG - Initialization complete
+2025-04-01 11:48:29,593 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.0.177:5002
+2025-04-01 11:48:29,593 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-01 11:48:29,595 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 11:48:38,342 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 11:48:38,344 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 11:48:38,344 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 11:48:38,348 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 11:48:38,499 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:48:38,980 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 11:48:39,072 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 11:48:39,165 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:48:39,237 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 11:48:39,312 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 11:48:39,388 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 11:48:39,772 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 11:48:39,952 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 11:48:40,041 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 11:48:40,042 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fccedfb4ec0>
+2025-04-01 11:48:40,042 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 11:48:40,043 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 11:48:40,043 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 11:48:40,043 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 11:48:40,043 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 11:48:40,046 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 11:48:40,079 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 11:48:40,118 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 15:48:40 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 11:48:40,120 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 11:48:40,120 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 11:48:40,120 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 11:48:40,120 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 11:48:40,121 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 11:48:40,121 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 11:48:40,121 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 11:48:40,122 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 11:48:40,122 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 11:48:40,122 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 11:48:40,122 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 11:48:40,133 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 11:48:40] "GET / HTTP/1.1" 200 -
+2025-04-01 11:48:40,510 - chromadb.config - DEBUG - Starting component System
+2025-04-01 11:48:40,510 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 11:48:40,510 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 11:48:40,510 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 11:48:40,514 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 11:48:40,514 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 11:48:40,515 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 11:48:40,515 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 11:48:40,515 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 11:48:40,646 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 11:48:40,650 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 11:48:40,650 - rag_app - DEBUG - Initialization complete
+2025-04-01 11:48:40,666 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 11:48:40,667 - werkzeug - INFO -  * Debugger PIN: 921-169-015
+2025-04-01 11:48:42,598 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 11:48:42,599 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe9554b8980>
+2025-04-01 11:48:42,599 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 11:48:42,600 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 11:48:42,600 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 11:48:42,601 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 11:48:42,601 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 11:48:42,603 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 15:48:42 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 11:48:42,604 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 11:48:42,604 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 11:48:42,605 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 11:48:42,605 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 11:48:42,605 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 11:48:42,606 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 11:48:42,607 - rag_app - ERROR - Error getting available models: 'name'
+Traceback (most recent call last):
+  File "/home/dzoey/projects/picscan/rag_retrieval2.py", line 74, in get_available_models
+    models = [model['name'] for model in response.models]
+              ~~~~~^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/ollama/_types.py", line 32, in __getitem__
+    raise KeyError(key)
+KeyError: 'name'
+2025-04-01 11:48:42,609 - rag_app - DEBUG - Rendering index page with 0 models
+2025-04-01 11:48:42,621 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 11:48:42] "GET / HTTP/1.1" 200 -
+2025-04-01 11:48:43,271 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 11:48:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-01 11:51:48,823 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 11:51:49,413 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 11:51:50,632 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 11:51:51,301 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 11:51:59,529 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 11:51:59,530 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 11:51:59,531 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 11:51:59,534 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 11:51:59,705 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:51:59,785 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 11:51:59,947 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 11:52:00,022 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,096 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,175 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 11:52:00,241 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 11:52:00,242 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 11:52:00,242 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 11:52:00,245 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 11:52:00,258 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,389 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,506 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,514 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,591 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 11:52:00,666 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,674 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 11:52:00,739 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 11:52:00,760 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 11:52:00,784 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 11:52:00,814 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 11:52:00,892 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 11:52:01,230 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 11:52:01,252 - chromadb.config - DEBUG - Starting component System
+2025-04-01 11:52:01,252 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 11:52:01,253 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 11:52:01,253 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 11:52:01,257 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 11:52:01,257 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 11:52:01,258 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 11:52:01,258 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 11:52:01,258 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 11:52:01,356 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 11:52:01,361 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 11:52:01,362 - rag_app - DEBUG - Initialization complete
+2025-04-01 11:52:01,380 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 11:52:01,381 - werkzeug - INFO -  * Debugger PIN: 921-169-015
+2025-04-01 11:52:01,453 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 11:52:01,546 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 11:52:01,565 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 11:52:01,873 - chromadb.config - DEBUG - Starting component System
+2025-04-01 11:52:01,874 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 11:52:01,874 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 11:52:01,874 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 11:52:01,877 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 11:52:01,878 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 11:52:01,878 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 11:52:01,878 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 11:52:01,878 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 11:52:01,938 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 11:52:01,941 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 11:52:01,942 - rag_app - DEBUG - Initialization complete
+2025-04-01 11:52:01,956 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 11:52:01,956 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 12:21:31,601 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:21:31,674 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f11902b4ec0>
+2025-04-01 12:21:31,674 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 12:21:31,675 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:21:31,675 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 12:21:31,675 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:21:31,675 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 12:21:31,677 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 16:21:31 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 12:21:31,678 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 12:21:31,679 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 12:21:31,679 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 12:21:31,680 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 12:21:31,680 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 12:21:31,681 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 12:21:31,682 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 12:21:31,682 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 12:21:31,682 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 12:21:31,683 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 12:21:31,683 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 12:21:31,692 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 12:21:31] "GET / HTTP/1.1" 200 -
+2025-04-01 12:21:34,159 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:21:34,160 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f950b9ac980>
+2025-04-01 12:21:34,161 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 12:21:34,165 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:21:34,165 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 12:21:34,166 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:21:34,166 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 12:21:34,167 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 16:21:34 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 12:21:34,168 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 12:21:34,169 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 12:21:34,169 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 12:21:34,169 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 12:21:34,169 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 12:21:34,170 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 12:21:34,170 - rag_app - DEBUG - Available models: ['granite-code:8b', 'phi4:latest', 'granite3.2-vision:latest']
+2025-04-01 12:21:34,170 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 12:21:34,181 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 12:21:34] "GET / HTTP/1.1" 200 -
+2025-04-01 12:21:50,428 - rag_app - DEBUG - Received query request with text: 'what states have the pictures been taken in?', model: granite3.2-vision:latest
+2025-04-01 12:21:50,429 - rag_app - DEBUG - Processing query with text: 'what states have the pictures been taken in?', image: None, model: granite3.2-vision:latest
+2025-04-01 12:21:50,429 - rag_app - DEBUG - Fetching RAG context for query: 'what states have the pictures been taken in?'
+2025-04-01 12:21:50,561 - chromadb.utils.embedding_functions.onnx_mini_lm_l6_v2 - DEBUG - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-04-01 12:21:51,617 - rag_app - ERROR - Error fetching RAG context: Embedding dimension 384 does not match collection dimensionality 1000
+Traceback (most recent call last):
+  File "/home/dzoey/projects/picscan/rag_retrieval2.py", line 103, in get_rag_context
+    results = image_collection.query(
+        query_texts=[query],
+        n_results=5,  # Adjust as needed
+        include=["metadatas", "documents"]
+    )
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/Collection.py", line 222, in query
+    query_results = self._client._query(
+        collection_id=self.id,
+    ...<6 lines>...
+        database=self.database,
+    )
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 150, in wrapper
+    return f(*args, **kwargs)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/tenacity/__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/tenacity/__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/tenacity/__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/segment.py", line 103, in wrapper
+    return self._rate_limit_enforcer.rate_limit(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/rate_limit/simple_rate_limit/__init__.py", line 24, in wrapper
+    return func(*args, **kwargs)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/segment.py", line 805, in _query
+    self._validate_dimension(scan.collection, len(embedding), update=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/segment.py", line 896, in _validate_dimension
+    raise InvalidDimensionException(
+        f"Embedding dimension {dim} does not match collection dimensionality {collection['dimension']}"
+    )
+chromadb.errors.InvalidDimensionException: Embedding dimension 384 does not match collection dimensionality 1000
+2025-04-01 12:21:51,635 - rag_app - DEBUG - Generated prompt with 0 characters of context
+2025-04-01 12:21:51,635 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-01 12:21:51,636 - httpcore.connection - DEBUG - close.started
+2025-04-01 12:21:51,637 - httpcore.connection - DEBUG - close.complete
+2025-04-01 12:21:51,637 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:21:51,639 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f950cbb6710>
+2025-04-01 12:21:51,639 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-01 12:21:51,640 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:21:51,640 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-01 12:21:51,640 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:21:51,640 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-01 12:22:39,733 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 16:22:39 GMT'), (b'Content-Length', b'599')])
+2025-04-01 12:22:39,733 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-01 12:22:39,733 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-01 12:22:39,733 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 12:22:39,734 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 12:22:39,734 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 12:22:39,734 - rag_app - DEBUG - Received response with 263 characters
+2025-04-01 12:22:39,734 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 12:22:39] "POST /query HTTP/1.1" 200 -
+2025-04-01 12:35:54,625 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 12:35:54,867 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 12:35:56,929 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 12:35:56,946 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 12:36:09,408 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 12:36:09,410 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 12:36:09,410 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 12:36:09,418 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 12:36:09,596 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 12:36:09,669 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 12:36:09,754 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 12:36:09,833 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 12:36:09,906 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 12:36:09,985 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 12:36:10,057 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 12:36:10,806 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 12:36:11,044 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 12:36:11,210 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 12:36:11,231 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 12:36:11,672 - chromadb.config - DEBUG - Starting component System
+2025-04-01 12:36:11,673 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 12:36:11,673 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 12:36:11,673 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 12:36:11,678 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 12:36:11,678 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 12:36:11,678 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 12:36:11,678 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 12:36:11,678 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 12:36:11,734 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 12:36:11,738 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 12:36:11,738 - rag_app - DEBUG - Initialization complete
+2025-04-01 12:36:11,751 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 12:36:11,752 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 12:52:00,189 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:52:00,259 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f51cb0b4ec0>
+2025-04-01 12:52:00,259 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 12:52:00,261 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:52:00,261 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 12:52:00,261 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:52:00,261 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 12:52:00,263 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 16:52:00 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 12:52:00,264 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 12:52:00,264 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 12:52:00,265 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 12:52:00,265 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 12:52:00,265 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 12:52:00,266 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 12:52:00,266 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 12:52:00,267 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 12:52:00,270 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 12:52:00,270 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 12:52:00,271 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 12:52:00,286 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 12:52:00] "GET / HTTP/1.1" 200 -
+2025-04-01 12:53:36,767 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval2.py', reloading
+2025-04-01 12:53:38,922 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 12:53:38,937 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 12:53:48,371 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 12:53:48,372 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 12:53:48,373 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 12:53:48,376 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 12:53:48,576 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-04-01 12:53:49,345 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-04-01 12:53:49,380 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-04-01 12:53:49,417 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 12:53:49,446 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2025-04-01 12:53:49,481 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+2025-04-01 12:53:49,515 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-04-01 12:53:49,532 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-04-01 12:53:49,563 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2025-04-01 12:53:49,603 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 12:53:49,775 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 12:53:50,383 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2025-04-01 12:53:50,407 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+2025-04-01 12:53:50,674 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2025-04-01 12:53:50,697 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 12:53:50,823 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 12:53:50,910 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 12:53:50,934 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 12:53:51,449 - chromadb.config - DEBUG - Starting component System
+2025-04-01 12:53:51,450 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 12:53:51,450 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 12:53:51,450 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 12:53:51,455 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 12:53:51,455 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 12:53:51,455 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 12:53:51,456 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 12:53:51,456 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 12:53:51,520 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 12:53:51,523 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 12:53:51,524 - rag_app - DEBUG - Initialization complete
+2025-04-01 12:53:51,538 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 12:53:51,539 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 12:56:24,493 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:56:24,493 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe4c7679400>
+2025-04-01 12:56:24,494 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 12:56:24,497 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:56:24,497 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 12:56:24,498 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:56:24,498 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 12:56:24,500 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 16:56:24 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 12:56:24,501 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 12:56:24,502 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 12:56:24,502 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 12:56:24,502 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 12:56:24,502 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 12:56:24,503 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 12:56:24,503 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 12:56:24,504 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 12:56:24,504 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 12:56:24,504 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 12:56:24,504 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 12:56:24,516 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 12:56:24] "GET / HTTP/1.1" 200 -
+2025-04-01 12:57:00,889 - httpcore.connection - DEBUG - close.started
+2025-04-01 12:57:00,890 - httpcore.connection - DEBUG - close.complete
+2025-04-01 12:57:00,891 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:57:00,891 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe4c7626c10>
+2025-04-01 12:57:00,891 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 12:57:00,892 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:57:00,892 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 12:57:00,892 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:57:00,892 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 12:57:00,893 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 16:57:00 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 12:57:00,894 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 12:57:00,894 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 12:57:00,894 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 12:57:00,894 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 12:57:00,894 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 12:57:00,895 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 12:57:00,895 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 12:57:00,896 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 12:57:00,896 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 12:57:00,896 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 12:57:00,896 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 12:57:00,902 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 12:57:00] "GET / HTTP/1.1" 200 -
+2025-04-01 12:57:19,919 - rag_app - DEBUG - Received query request with text: 'what states were pictures of gymnastics taken in?
+', model: granite3.2-vision:latest
+2025-04-01 12:57:19,919 - rag_app - DEBUG - Processing query with text: 'what states were pictures of gymnastics taken in?
+', image: None, model: granite3.2-vision:latest
+2025-04-01 12:57:19,920 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-01 12:57:19,920 - rag_app - DEBUG - Generating embedding for query: what states were pictures of gymnastics taken in?
+
+2025-04-01 12:57:20,109 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-01 12:57:20,123 - chromadb.config - DEBUG - Starting component PersistentLocalHnswSegment
+2025-04-01 12:57:20,607 - rag_app - DEBUG - Added document 1 (952 chars)
+2025-04-01 12:57:20,607 - rag_app - DEBUG - Added document 2 (2262 chars)
+2025-04-01 12:57:20,607 - rag_app - DEBUG - Added document 3 (996 chars)
+2025-04-01 12:57:20,607 - rag_app - DEBUG - Added document 4 (1373 chars)
+2025-04-01 12:57:20,608 - rag_app - DEBUG - Added document 5 (986 chars)
+2025-04-01 12:57:20,608 - rag_app - DEBUG - Generated context with 6608 characters (~1652 tokens)
+2025-04-01 12:57:20,608 - rag_app - DEBUG - Generated prompt with 6608 characters of context
+2025-04-01 12:57:20,608 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-01 12:57:20,609 - httpcore.connection - DEBUG - close.started
+2025-04-01 12:57:20,609 - httpcore.connection - DEBUG - close.complete
+2025-04-01 12:57:20,610 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 12:57:20,610 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe4c7626350>
+2025-04-01 12:57:20,610 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-01 12:57:20,611 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 12:57:20,611 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-01 12:57:20,611 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 12:57:20,611 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-01 13:07:32,759 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 17:07:32 GMT'), (b'Transfer-Encoding', b'chunked')])
+2025-04-01 13:07:32,759 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-01 13:07:32,759 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-01 13:07:32,760 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 13:07:32,760 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 13:07:32,760 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 13:07:32,760 - rag_app - DEBUG - Received response with 2343 characters
+2025-04-01 13:07:32,761 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 13:07:32] "POST /query HTTP/1.1" 200 -
+2025-04-01 14:13:16,875 - rag_app - DEBUG - Received query request with text: 'what state in locations were pictures of gymnastics taken in?
+', model: granite3.2-vision:latest
+2025-04-01 14:13:16,875 - rag_app - DEBUG - Processing query with text: 'what state in locations were pictures of gymnastics taken in?
+', image: None, model: granite3.2-vision:latest
+2025-04-01 14:13:16,875 - rag_app - DEBUG - Detected metadata focus: location
+2025-04-01 14:13:16,875 - rag_app - DEBUG - Generating embedding for query: what state in locations were pictures of gymnastics taken in?
+
+2025-04-01 14:13:16,919 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Added document 1 (952 chars)
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Added document 2 (986 chars)
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Added document 3 (2262 chars)
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Added document 4 (996 chars)
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Added document 5 (1373 chars)
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Generated context with 6608 characters (~1652 tokens)
+2025-04-01 14:13:16,999 - rag_app - DEBUG - Generated prompt with 6608 characters of context
+2025-04-01 14:13:17,000 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-01 14:13:17,001 - httpcore.connection - DEBUG - close.started
+2025-04-01 14:13:17,001 - httpcore.connection - DEBUG - close.complete
+2025-04-01 14:13:17,002 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 14:13:17,002 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe4c767d480>
+2025-04-01 14:13:17,003 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-01 14:13:17,003 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 14:13:17,004 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-01 14:13:17,004 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 14:13:17,004 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-01 14:20:14,649 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 01 Apr 2025 18:20:14 GMT'), (b'Content-Length', b'1516')])
+2025-04-01 14:20:14,650 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-01 14:20:14,650 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-01 14:20:14,650 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 14:20:14,650 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 14:20:14,651 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 14:20:14,651 - rag_app - DEBUG - Received response with 1183 characters
+2025-04-01 14:20:14,651 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 14:20:14] "POST /query HTTP/1.1" 200 -
+2025-04-01 22:39:52,761 - rag_app - DEBUG - Received query request with text: 'what states were in the GPS metadata of the pictures of gymnastics taken in?
+', model: granite3.2-vision:latest
+2025-04-01 22:39:52,829 - rag_app - DEBUG - Processing query with text: 'what states were in the GPS metadata of the pictures of gymnastics taken in?
+', image: None, model: granite3.2-vision:latest
+2025-04-01 22:39:52,829 - rag_app - DEBUG - Detected metadata focus: location
+2025-04-01 22:39:52,829 - rag_app - DEBUG - Generating embedding for query: what states were in the GPS metadata of the pictures of gymnastics taken in?
+
+2025-04-01 22:39:53,420 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-01 22:39:53,484 - rag_app - DEBUG - Added document 1 (952 chars)
+2025-04-01 22:39:53,484 - rag_app - DEBUG - Added document 2 (1544 chars)
+2025-04-01 22:39:53,484 - rag_app - DEBUG - Added document 3 (2262 chars)
+2025-04-01 22:39:53,485 - rag_app - DEBUG - Added document 4 (1373 chars)
+2025-04-01 22:39:53,485 - rag_app - DEBUG - Added document 5 (1369 chars)
+2025-04-01 22:39:53,485 - rag_app - DEBUG - Generated context with 7539 characters (~1884 tokens)
+2025-04-01 22:39:53,485 - rag_app - DEBUG - Generated prompt with 7539 characters of context
+2025-04-01 22:39:53,486 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-01 22:39:53,502 - httpcore.connection - DEBUG - close.started
+2025-04-01 22:39:53,502 - httpcore.connection - DEBUG - close.complete
+2025-04-01 22:39:53,502 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 22:39:53,503 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe4c767f100>
+2025-04-01 22:39:53,504 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-01 22:39:53,504 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 22:39:53,504 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-01 22:39:53,505 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 22:39:53,505 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-01 22:42:19,780 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 02:42:19 GMT'), (b'Content-Length', b'672')])
+2025-04-01 22:42:19,850 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-01 22:42:19,850 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-01 22:42:19,850 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 22:42:19,850 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 22:42:19,850 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 22:42:19,851 - rag_app - DEBUG - Received response with 351 characters
+2025-04-01 22:42:19,852 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 22:42:19] "POST /query HTTP/1.1" 200 -
+2025-04-01 22:49:29,171 - rag_app - DEBUG - Received query request with text: 'list all states found in the image metadata
+', model: granite3.2-vision:latest
+2025-04-01 22:49:29,235 - rag_app - DEBUG - Processing query with text: 'list all states found in the image metadata
+', image: None, model: granite3.2-vision:latest
+2025-04-01 22:49:29,236 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-01 22:49:29,236 - rag_app - DEBUG - Generating embedding for query: list all states found in the image metadata
+
+2025-04-01 22:49:29,277 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-01 22:49:29,325 - rag_app - DEBUG - Added document 1 (1653 chars)
+2025-04-01 22:49:29,325 - rag_app - DEBUG - Added document 2 (1369 chars)
+2025-04-01 22:49:29,325 - rag_app - DEBUG - Added document 3 (1544 chars)
+2025-04-01 22:49:29,325 - rag_app - DEBUG - Added document 4 (1695 chars)
+2025-04-01 22:49:29,325 - rag_app - DEBUG - Added document 5 (1517 chars)
+2025-04-01 22:49:29,325 - rag_app - DEBUG - Generated context with 7817 characters (~1954 tokens)
+2025-04-01 22:49:29,326 - rag_app - DEBUG - Generated prompt with 7817 characters of context
+2025-04-01 22:49:29,326 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-01 22:49:29,327 - httpcore.connection - DEBUG - close.started
+2025-04-01 22:49:29,327 - httpcore.connection - DEBUG - close.complete
+2025-04-01 22:49:29,327 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 22:49:29,328 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fe4c76239b0>
+2025-04-01 22:49:29,328 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-01 22:49:29,328 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 22:49:29,329 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-01 22:49:29,329 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 22:49:29,329 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-01 22:53:48,460 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 02:53:48 GMT'), (b'Content-Length', b'944')])
+2025-04-01 22:53:48,461 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-01 22:53:48,461 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-01 22:53:48,461 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 22:53:48,461 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 22:53:48,461 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 22:53:48,462 - rag_app - DEBUG - Received response with 616 characters
+2025-04-01 22:53:48,462 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 22:53:48] "POST /query HTTP/1.1" 200 -
+2025-04-01 23:51:59,539 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval.py', reloading
+2025-04-01 23:52:04,715 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 23:54:25,907 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 23:54:25,909 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 23:54:25,909 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 23:54:25,917 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 23:54:25,990 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 23:54:26,034 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 23:54:26,065 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 23:54:26,204 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 23:54:26,236 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 23:54:26,270 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 23:54:26,299 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 23:54:26,799 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 23:54:26,922 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 23:54:26,977 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 23:54:27,010 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 23:54:27,605 - chromadb.config - DEBUG - Starting component System
+2025-04-01 23:54:27,606 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 23:54:27,606 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 23:54:27,606 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 23:54:27,619 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 23:54:27,619 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 23:54:27,619 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 23:54:27,619 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 23:54:27,619 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 23:54:27,711 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 23:54:27,713 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 23:54:27,713 - rag_app - DEBUG - Initialization complete
+2025-04-01 23:54:27,732 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.177:5000
+2025-04-01 23:54:27,732 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-01 23:54:27,734 - werkzeug - INFO -  * Restarting with stat
+2025-04-01 23:54:34,762 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-01 23:54:34,763 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 23:54:34,763 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 23:54:34,766 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-01 23:54:34,826 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 23:54:34,866 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-01 23:54:34,907 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-01 23:54:34,941 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-01 23:54:34,971 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-01 23:54:35,004 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-01 23:54:35,034 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-01 23:54:35,269 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-01 23:54:35,379 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-01 23:54:35,510 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-01 23:54:35,534 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-01 23:54:35,837 - chromadb.config - DEBUG - Starting component System
+2025-04-01 23:54:35,837 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-01 23:54:35,837 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-01 23:54:35,837 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-01 23:54:35,909 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-01 23:54:35,909 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-01 23:54:35,909 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-01 23:54:35,909 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-01 23:54:35,909 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-01 23:54:35,980 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-01 23:54:35,983 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-01 23:54:35,984 - rag_app - DEBUG - Initialization complete
+2025-04-01 23:54:35,996 - werkzeug - WARNING -  * Debugger is active!
+2025-04-01 23:54:35,997 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-01 23:54:52,220 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 23:54:52,221 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f39766a4d70>
+2025-04-01 23:54:52,221 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-01 23:54:52,222 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 23:54:52,222 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-01 23:54:52,222 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 23:54:52,222 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-01 23:54:52,716 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 03:54:52 GMT'), (b'Content-Length', b'1041')])
+2025-04-01 23:54:52,717 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-01 23:54:52,718 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-01 23:54:52,718 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 23:54:52,718 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 23:54:52,718 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 23:54:52,719 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-01 23:54:52,719 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-01 23:54:52,719 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-01 23:54:52,719 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-01 23:54:52,720 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-01 23:54:52,720 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-01 23:54:52,730 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 23:54:52] "GET / HTTP/1.1" 200 -
+2025-04-01 23:55:28,333 - rag_app - DEBUG - Received query request with text: 'list the states where the images were taken', model: granite3.2-vision:latest
+2025-04-01 23:55:28,334 - rag_app - DEBUG - Processing query with text: 'list the states where the images were taken', image: None, model: granite3.2-vision:latest
+2025-04-01 23:55:28,334 - rag_app - DEBUG - Detected metadata focus: location
+2025-04-01 23:55:28,334 - rag_app - DEBUG - Generating embedding for query: list the states where the images were taken
+2025-04-01 23:55:28,527 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-01 23:55:28,542 - chromadb.config - DEBUG - Starting component PersistentLocalHnswSegment
+2025-04-01 23:55:29,156 - rag_app - DEBUG - Added document 1 (1653 chars)
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Added document 2 (1006 chars)
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Added document 3 (1684 chars)
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Added document 4 (909 chars)
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Added document 5 (1619 chars)
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Generated context with 6910 characters (~1727 tokens)
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Generated prompt with 6910 characters of context
+2025-04-01 23:55:29,157 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-01 23:55:29,161 - httpcore.connection - DEBUG - close.started
+2025-04-01 23:55:29,161 - httpcore.connection - DEBUG - close.complete
+2025-04-01 23:55:29,161 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-01 23:55:29,162 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f39778bad50>
+2025-04-01 23:55:29,163 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-01 23:55:29,163 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-01 23:55:29,163 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-01 23:55:29,164 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-01 23:55:29,164 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-01 23:58:07,302 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 03:58:07 GMT'), (b'Transfer-Encoding', b'chunked')])
+2025-04-01 23:58:07,303 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-01 23:58:07,303 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-01 23:58:07,303 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-01 23:58:07,303 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-01 23:58:07,303 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-01 23:58:07,303 - rag_app - DEBUG - Received response with 2350 characters
+2025-04-01 23:58:07,304 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 23:58:07] "POST /query HTTP/1.1" 200 -
+2025-04-02 00:33:49,064 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval.py', reloading
+2025-04-02 00:33:51,514 - werkzeug - INFO -  * Restarting with stat
+2025-04-02 00:34:04,156 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-02 00:34:04,158 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-02 00:34:04,158 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-02 00:34:04,165 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 00:34:04,334 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 00:34:04,412 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-02 00:34:04,494 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-02 00:34:04,634 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 00:34:04,708 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-02 00:34:04,791 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-02 00:34:04,868 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-02 00:34:05,726 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-02 00:34:05,965 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-02 00:34:06,127 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-02 00:34:06,164 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-02 00:34:06,675 - chromadb.config - DEBUG - Starting component System
+2025-04-02 00:34:06,675 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-02 00:34:06,675 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-02 00:34:06,675 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-02 00:34:06,684 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-02 00:34:06,684 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-02 00:34:06,684 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-02 00:34:06,685 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-02 00:34:06,685 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-02 00:34:06,765 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-02 00:34:06,769 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-02 00:34:06,770 - rag_app - DEBUG - Initialization complete
+2025-04-02 00:34:06,789 - werkzeug - WARNING -  * Debugger is active!
+2025-04-02 00:34:06,790 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-02 00:34:10,305 - rag_app - DEBUG - Received query request with text: 'list the states where the images were taken', model: granite3.2-vision:latest
+2025-04-02 00:34:10,305 - rag_app - DEBUG - Processing query with text: 'list the states where the images were taken', image: None, model: granite3.2-vision:latest
+2025-04-02 00:34:10,305 - rag_app - DEBUG - Detected state list request, using direct metadata aggregation
+2025-04-02 00:34:10,960 - rag_app - DEBUG - Retrieved 183 metadata entries
+2025-04-02 00:34:10,960 - rag_app - DEBUG - Found 0 unique states: []
+2025-04-02 00:34:10,961 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 00:34:10] "POST /query HTTP/1.1" 200 -
+2025-04-02 12:07:28,964 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-02 12:07:28,966 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-02 12:07:28,966 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-02 12:07:28,970 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 12:07:29,144 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:07:29,796 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-02 12:07:29,851 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-02 12:07:29,962 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:07:30,033 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-02 12:07:30,153 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-02 12:07:30,244 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-02 12:07:31,054 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-02 12:07:31,216 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-02 12:07:31,447 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-02 12:07:31,550 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-02 12:07:32,049 - chromadb.config - DEBUG - Starting component System
+2025-04-02 12:07:32,049 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-02 12:07:32,049 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-02 12:07:32,049 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-02 12:07:32,054 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-02 12:07:32,054 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-02 12:07:32,054 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-02 12:07:32,054 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-02 12:07:32,054 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-02 12:07:32,121 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-02 12:07:32,124 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-02 12:07:32,124 - rag_app - DEBUG - Initialization complete
+2025-04-02 12:07:32,147 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://9.74.130.252:5000
+2025-04-02 12:07:32,147 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:07:32,149 - werkzeug - INFO -  * Restarting with stat
+2025-04-02 12:07:38,750 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-02 12:07:38,752 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-02 12:07:38,753 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-02 12:07:38,759 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 12:07:39,221 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:07:39,527 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-02 12:07:39,571 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-02 12:07:39,616 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:07:39,669 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-02 12:07:39,739 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-02 12:07:39,802 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-02 12:07:40,071 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-02 12:07:40,221 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-02 12:07:40,293 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-02 12:07:40,316 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-02 12:07:40,811 - chromadb.config - DEBUG - Starting component System
+2025-04-02 12:07:40,811 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-02 12:07:40,812 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-02 12:07:40,812 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-02 12:07:40,819 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-02 12:07:40,819 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-02 12:07:40,820 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-02 12:07:40,820 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-02 12:07:40,821 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-02 12:07:40,898 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-02 12:07:40,912 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-02 12:07:40,913 - rag_app - DEBUG - Initialization complete
+2025-04-02 12:07:40,926 - werkzeug - WARNING -  * Debugger is active!
+2025-04-02 12:07:40,927 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-02 12:09:21,503 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-02 12:09:21,504 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8b73bb4ad0>
+2025-04-02 12:09:21,505 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-02 12:09:21,507 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-02 12:09:21,507 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-02 12:09:21,508 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-02 12:09:21,508 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-02 12:09:21,609 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 16:09:21 GMT'), (b'Content-Length', b'1041')])
+2025-04-02 12:09:21,610 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-02 12:09:21,610 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-02 12:09:21,611 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-02 12:09:21,611 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-02 12:09:21,611 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-02 12:09:21,612 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-02 12:09:21,613 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-02 12:09:21,613 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-02 12:09:21,613 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-02 12:09:21,613 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-02 12:09:21,614 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-02 12:09:21,623 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 12:09:21] "GET / HTTP/1.1" 200 -
+2025-04-02 12:09:48,796 - rag_app - DEBUG - Received query request with text: 'list the states that the images were taken', model: granite3.2-vision:latest
+2025-04-02 12:09:48,796 - rag_app - DEBUG - Processing query with text: 'list the states that the images were taken', image: None, model: granite3.2-vision:latest
+2025-04-02 12:09:48,797 - rag_app - DEBUG - Detected state list request, using direct metadata aggregation
+2025-04-02 12:09:48,981 - rag_app - DEBUG - Retrieved 79 metadata entries
+2025-04-02 12:09:48,981 - rag_app - DEBUG - Found 0 unique states: []
+2025-04-02 12:09:48,982 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 12:09:48] "POST /query HTTP/1.1" 200 -
+2025-04-02 12:22:20,974 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-02 12:22:20,975 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-02 12:22:20,975 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-02 12:22:20,978 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 12:22:21,070 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:22:21,137 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-02 12:22:21,188 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-02 12:22:21,239 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:22:21,275 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-02 12:22:21,321 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-02 12:22:21,449 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-02 12:22:21,675 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-02 12:22:21,915 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-02 12:22:21,973 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-02 12:22:21,995 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-02 12:22:22,389 - chromadb.config - DEBUG - Starting component System
+2025-04-02 12:22:22,389 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-02 12:22:22,389 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-02 12:22:22,389 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-02 12:22:22,393 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-02 12:22:22,394 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-02 12:22:22,394 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-02 12:22:22,394 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-02 12:22:22,394 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-02 12:22:22,458 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-02 12:22:22,461 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-02 12:22:22,461 - rag_app - DEBUG - Initialization complete
+2025-04-02 12:22:22,479 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://9.74.130.252:5000
+2025-04-02 12:22:22,479 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:22:22,481 - werkzeug - INFO -  * Restarting with stat
+2025-04-02 12:22:28,944 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-02 12:22:28,945 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-02 12:22:28,945 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-02 12:22:28,948 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 12:22:29,044 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:22:29,091 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-02 12:22:29,129 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-02 12:22:29,163 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-02 12:22:29,215 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-02 12:22:29,266 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-02 12:22:29,315 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-02 12:22:29,572 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-02 12:22:29,683 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-02 12:22:29,741 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-02 12:22:29,760 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-02 12:22:30,015 - chromadb.config - DEBUG - Starting component System
+2025-04-02 12:22:30,015 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-02 12:22:30,016 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-02 12:22:30,016 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-02 12:22:30,019 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-02 12:22:30,019 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-02 12:22:30,019 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-02 12:22:30,019 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-02 12:22:30,019 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-02 12:22:30,078 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-02 12:22:30,081 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-02 12:22:30,082 - rag_app - DEBUG - Initialization complete
+2025-04-02 12:22:30,096 - werkzeug - WARNING -  * Debugger is active!
+2025-04-02 12:22:30,098 - werkzeug - INFO -  * Debugger PIN: 171-478-515
+2025-04-02 12:22:48,553 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-02 12:22:48,554 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f55605b8ad0>
+2025-04-02 12:22:48,555 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-02 12:22:48,556 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-02 12:22:48,556 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-02 12:22:48,556 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-02 12:22:48,556 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-02 12:22:48,558 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 16:22:48 GMT'), (b'Content-Length', b'1041')])
+2025-04-02 12:22:48,559 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-02 12:22:48,559 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-02 12:22:48,560 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-02 12:22:48,560 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-02 12:22:48,560 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-02 12:22:48,561 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-02 12:22:48,561 - rag_app - DEBUG - Found 3 models in response.models
+2025-04-02 12:22:48,561 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-02 12:22:48,562 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-02 12:22:48,562 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-02 12:22:48,562 - rag_app - DEBUG - Rendering index page with 3 models
+2025-04-02 12:22:48,572 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 12:22:48] "GET / HTTP/1.1" 200 -
+2025-04-02 12:23:07,305 - rag_app - DEBUG - Received query request with text: 'list all states where pictures were taken.', model: granite3.2-vision:latest
+2025-04-02 12:23:07,305 - rag_app - DEBUG - Processing query with text: 'list all states where pictures were taken.', image: None, model: granite3.2-vision:latest
+2025-04-02 12:23:07,306 - rag_app - DEBUG - Detected states list request, retrieving field exif_GPSInfo_state
+2025-04-02 12:23:07,364 - rag_app - DEBUG - Retrieved 81 metadata entries
+2025-04-02 12:23:07,365 - rag_app - DEBUG - Found 69 entries for field 'exif_GPSInfo_state' across 81 metadata records
+2025-04-02 12:23:07,366 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 12:23:07] "POST /query HTTP/1.1" 200 -
+2025-04-02 12:23:23,266 - rag_app - DEBUG - Received query request with text: 'show me a picture that was taken in maryland', model: granite3.2-vision:latest
+2025-04-02 12:23:23,266 - rag_app - DEBUG - Processing query with text: 'show me a picture that was taken in maryland', image: None, model: granite3.2-vision:latest
+2025-04-02 12:23:23,267 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-02 12:23:23,267 - rag_app - DEBUG - Generating embedding for query: show me a picture that was taken in maryland
+2025-04-02 12:23:23,467 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-02 12:23:23,479 - chromadb.config - DEBUG - Starting component PersistentLocalHnswSegment
+2025-04-02 12:23:23,508 - rag_app - DEBUG - Added document 1 (1695 chars)
+2025-04-02 12:23:23,508 - rag_app - DEBUG - Added document 2 (1653 chars)
+2025-04-02 12:23:23,508 - rag_app - DEBUG - Added document 3 (952 chars)
+2025-04-02 12:23:23,508 - rag_app - DEBUG - Added document 4 (1291 chars)
+2025-04-02 12:23:23,508 - rag_app - DEBUG - Added document 5 (1680 chars)
+2025-04-02 12:23:23,509 - rag_app - DEBUG - Generated context with 7310 characters (~1827 tokens)
+2025-04-02 12:23:23,509 - rag_app - DEBUG - Generated prompt with 7310 characters of context
+2025-04-02 12:23:23,509 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-02 12:23:23,510 - httpcore.connection - DEBUG - close.started
+2025-04-02 12:23:23,510 - httpcore.connection - DEBUG - close.complete
+2025-04-02 12:23:23,510 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-02 12:23:23,511 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f55617a6e90>
+2025-04-02 12:23:23,511 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-02 12:23:23,512 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-02 12:23:23,512 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-02 12:23:23,512 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-02 12:23:23,513 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-02 12:32:08,182 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 16:32:08 GMT'), (b'Content-Length', b'1834')])
+2025-04-02 12:32:08,182 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-02 12:32:08,182 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-02 12:32:08,182 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-02 12:32:08,182 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-02 12:32:08,183 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-02 12:32:08,183 - rag_app - DEBUG - Received response with 1498 characters
+2025-04-02 12:32:08,183 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:08] "POST /query HTTP/1.1" 200 -
+2025-04-02 15:50:16,319 - rag_app - DEBUG - Received query request with text: 'how many pictures were taken between july 2015 and august 2020?  You can use metadata as well.', model: granite3.2-vision:latest
+2025-04-02 15:50:16,390 - rag_app - DEBUG - Processing query with text: 'how many pictures were taken between july 2015 and august 2020?  You can use metadata as well.', image: None, model: granite3.2-vision:latest
+2025-04-02 15:50:16,394 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-02 15:50:16,394 - rag_app - DEBUG - Generating embedding for query: how many pictures were taken between july 2015 and august 2020?  You can use metadata as well.
+2025-04-02 15:50:16,566 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Added document 1 (1611 chars)
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Added document 2 (1494 chars)
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Added document 3 (1384 chars)
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Added document 4 (1653 chars)
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Added document 5 (1478 chars)
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Generated context with 7659 characters (~1914 tokens)
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Generated prompt with 7659 characters of context
+2025-04-02 15:50:16,593 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-02 15:50:16,595 - httpcore.connection - DEBUG - close.started
+2025-04-02 15:50:16,597 - httpcore.connection - DEBUG - close.complete
+2025-04-02 15:50:16,597 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-02 15:50:16,598 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f5560658190>
+2025-04-02 15:50:16,599 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-02 15:50:16,599 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-02 15:50:16,599 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-02 15:50:16,599 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-02 15:50:16,600 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-02 15:54:19,812 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 19:54:19 GMT'), (b'Content-Length', b'644')])
+2025-04-02 15:54:19,878 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-02 15:54:19,879 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-02 15:54:19,879 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-02 15:54:19,879 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-02 15:54:19,879 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-02 15:54:19,879 - rag_app - DEBUG - Received response with 322 characters
+2025-04-02 15:54:19,879 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 15:54:19] "POST /query HTTP/1.1" 200 -
+2025-04-02 16:01:33,740 - rag_app - DEBUG - Received query request with text: 'how many photos are about gymnastics?  How many are not about gymnastics?', model: granite3.2-vision:latest
+2025-04-02 16:01:33,740 - rag_app - DEBUG - Processing query with text: 'how many photos are about gymnastics?  How many are not about gymnastics?', image: None, model: granite3.2-vision:latest
+2025-04-02 16:01:33,740 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-02 16:01:33,741 - rag_app - DEBUG - Generating embedding for query: how many photos are about gymnastics?  How many are not about gymnastics?
+2025-04-02 16:01:33,853 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-02 16:01:33,895 - rag_app - DEBUG - Added document 1 (1373 chars)
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Added document 2 (952 chars)
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Added document 3 (2262 chars)
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Added document 4 (1369 chars)
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Added document 5 (1163 chars)
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Generated context with 7158 characters (~1789 tokens)
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Generated prompt with 7158 characters of context
+2025-04-02 16:01:33,896 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-02 16:01:33,898 - httpcore.connection - DEBUG - close.started
+2025-04-02 16:01:33,899 - httpcore.connection - DEBUG - close.complete
+2025-04-02 16:01:33,899 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-02 16:01:33,900 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f55605b6060>
+2025-04-02 16:01:33,900 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-02 16:01:33,900 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-02 16:01:33,900 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-02 16:01:33,901 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-02 16:01:33,901 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-02 16:03:51,936 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 02 Apr 2025 20:03:51 GMT'), (b'Content-Length', b'949')])
+2025-04-02 16:03:51,936 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-02 16:03:51,936 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-02 16:03:51,937 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-02 16:03:51,937 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-02 16:03:51,937 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-02 16:03:51,937 - rag_app - DEBUG - Received response with 608 characters
+2025-04-02 16:03:51,938 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:03:51] "POST /query HTTP/1.1" 200 -
+2025-04-03 13:41:07,075 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-03 13:41:07,144 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-03 13:41:07,144 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-03 13:41:07,146 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-03 13:41:07,261 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 13:41:07,386 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-03 13:41:07,455 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-03 13:41:07,834 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 13:41:07,885 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-03 13:41:07,948 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-03 13:41:08,003 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-03 13:41:08,365 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-03 13:41:08,558 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-03 13:41:08,643 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-03 13:41:08,657 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-03 13:41:08,826 - chromadb.config - DEBUG - Starting component System
+2025-04-03 13:41:08,827 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-03 13:41:08,827 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-03 13:41:08,827 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-03 13:41:08,829 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-03 13:41:08,829 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-03 13:41:08,829 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-03 13:41:08,829 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-03 13:41:08,829 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-03 13:41:08,862 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-03 13:41:08,863 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-03 13:41:08,863 - rag_app - DEBUG - Initialization complete
+2025-04-03 13:41:08,922 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.177:5000
+2025-04-03 13:41:08,922 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-03 13:41:08,924 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 13:41:12,624 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-03 13:41:12,625 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-03 13:41:12,625 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-03 13:41:12,627 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-03 13:41:12,720 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 13:41:12,986 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-03 13:41:13,051 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-03 13:41:13,112 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 13:41:13,171 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-03 13:41:13,229 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-03 13:41:13,279 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-03 13:41:13,461 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-03 13:41:14,124 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-03 13:41:14,200 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-03 13:41:14,213 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-03 13:41:14,373 - chromadb.config - DEBUG - Starting component System
+2025-04-03 13:41:14,373 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-03 13:41:14,373 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-03 13:41:14,374 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-03 13:41:14,377 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-03 13:41:14,377 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-03 13:41:14,377 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-03 13:41:14,377 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-03 13:41:14,377 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-03 13:41:14,411 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-03 13:41:14,412 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-03 13:41:14,412 - rag_app - DEBUG - Initialization complete
+2025-04-03 13:41:14,419 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 13:41:14,420 - werkzeug - INFO -  * Debugger PIN: 647-245-065
+2025-04-03 13:45:09,437 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 13:45:09,437 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f34e97d8ad0>
+2025-04-03 13:45:09,438 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-03 13:45:09,438 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 13:45:09,439 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-03 13:45:09,439 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 13:45:09,439 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-03 13:45:09,441 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 17:45:09 GMT'), (b'Content-Length', b'1368')])
+2025-04-03 13:45:09,442 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-03 13:45:09,442 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-03 13:45:09,443 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 13:45:09,443 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 13:45:09,443 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='llama3.2:1b', modified_at=datetime.datetime(2025, 4, 2, 17, 3, 27, 526942, tzinfo=TzInfo(-04:00)), digest='baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878', size=1321098329, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='1.2B', quantization_level='Q8_0')), Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Found 4 models in response.models
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Added model: llama3.2:1b
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-03 13:45:09,444 - rag_app - DEBUG - Rendering index page with 4 models
+2025-04-03 13:45:09,503 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 13:45:09] "GET / HTTP/1.1" 200 -
+2025-04-03 13:45:10,207 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 13:45:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-03 13:45:32,835 - rag_app - DEBUG - Received query request with text: 'what images were taken in maryland?
+', model: granite3.2-vision:latest
+2025-04-03 13:45:32,836 - rag_app - DEBUG - Processing query with text: 'what images were taken in maryland?
+', image: None, model: granite3.2-vision:latest
+2025-04-03 13:45:32,836 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-03 13:45:32,836 - rag_app - DEBUG - Generating embedding for query: what images were taken in maryland?
+
+2025-04-03 13:45:33,317 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-03 13:45:33,320 - chromadb.config - DEBUG - Starting component PersistentLocalHnswSegment
+2025-04-03 13:45:33,561 - rag_app - DEBUG - Added document 1 (1653 chars)
+2025-04-03 13:45:33,561 - rag_app - DEBUG - Added document 2 (1684 chars)
+2025-04-03 13:45:33,561 - rag_app - DEBUG - Added document 3 (1006 chars)
+2025-04-03 13:45:33,562 - rag_app - DEBUG - Added document 4 (1695 chars)
+2025-04-03 13:45:33,562 - rag_app - DEBUG - Added document 5 (1003 chars)
+2025-04-03 13:45:33,562 - rag_app - DEBUG - Generated context with 7080 characters (~1770 tokens)
+2025-04-03 13:45:33,562 - rag_app - DEBUG - Generated prompt with 7080 characters of context
+2025-04-03 13:45:33,562 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-03 13:45:33,563 - httpcore.connection - DEBUG - close.started
+2025-04-03 13:45:33,563 - httpcore.connection - DEBUG - close.complete
+2025-04-03 13:45:33,563 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 13:45:33,563 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f34e9789810>
+2025-04-03 13:45:33,563 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-03 13:45:33,564 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 13:45:33,564 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-03 13:45:33,564 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 13:45:33,564 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-03 13:47:12,911 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 17:47:12 GMT'), (b'Content-Length', b'1513')])
+2025-04-03 13:47:12,911 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-03 13:47:12,911 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-03 13:47:12,911 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 13:47:12,911 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 13:47:12,911 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 13:47:12,911 - rag_app - DEBUG - Received response with 1188 characters
+2025-04-03 13:47:12,912 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 13:47:12] "POST /query HTTP/1.1" 200 -
+2025-04-03 14:00:45,548 - rag_app - DEBUG - Received query request with text: 'what images have metadata that contains the state of maryland?
+
+', model: granite3.2-vision:latest
+2025-04-03 14:00:45,548 - rag_app - DEBUG - Processing query with text: 'what images have metadata that contains the state of maryland?
+
+', image: None, model: granite3.2-vision:latest
+2025-04-03 14:00:45,548 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-03 14:00:45,548 - rag_app - DEBUG - Generating embedding for query: what images have metadata that contains the state of maryland?
+
+
+2025-04-03 14:00:45,628 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Added document 1 (1653 chars)
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Added document 2 (1695 chars)
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Added document 3 (1006 chars)
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Added document 4 (943 chars)
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Added document 5 (1684 chars)
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Generated context with 7020 characters (~1755 tokens)
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Generated prompt with 7020 characters of context
+2025-04-03 14:00:45,635 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-03 14:00:45,636 - httpcore.connection - DEBUG - close.started
+2025-04-03 14:00:45,636 - httpcore.connection - DEBUG - close.complete
+2025-04-03 14:00:45,636 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 14:00:45,636 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f34e9858410>
+2025-04-03 14:00:45,637 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-03 14:00:45,637 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 14:00:45,637 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-03 14:00:45,637 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 14:00:45,637 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-03 14:02:00,074 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 18:02:00 GMT'), (b'Content-Length', b'827')])
+2025-04-03 14:02:00,074 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-03 14:02:00,074 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-03 14:02:00,074 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 14:02:00,074 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 14:02:00,075 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 14:02:00,075 - rag_app - DEBUG - Received response with 506 characters
+2025-04-03 14:02:00,075 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 14:02:00] "POST /query HTTP/1.1" 200 -
+2025-04-03 14:03:44,572 - rag_app - DEBUG - Received query request with text: 'what metadata is available?
+
+', model: granite3.2-vision:latest
+2025-04-03 14:03:44,573 - rag_app - DEBUG - Processing query with text: 'what metadata is available?
+
+', image: None, model: granite3.2-vision:latest
+2025-04-03 14:03:44,573 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-03 14:03:44,573 - rag_app - DEBUG - Generating embedding for query: what metadata is available?
+
+
+2025-04-03 14:03:44,597 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Added document 1 (1478 chars)
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Added document 2 (1651 chars)
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Added document 3 (1684 chars)
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Added document 4 (1570 chars)
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Added document 5 (922 chars)
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Generated context with 7344 characters (~1836 tokens)
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Generated prompt with 7344 characters of context
+2025-04-03 14:03:44,608 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-03 14:03:44,609 - httpcore.connection - DEBUG - close.started
+2025-04-03 14:03:44,609 - httpcore.connection - DEBUG - close.complete
+2025-04-03 14:03:44,609 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 14:03:44,610 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f34e97d1f30>
+2025-04-03 14:03:44,610 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-03 14:03:44,610 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 14:03:44,610 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-03 14:03:44,611 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 14:03:44,611 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-03 14:07:08,347 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 18:07:08 GMT'), (b'Transfer-Encoding', b'chunked')])
+2025-04-03 14:07:08,348 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-03 14:07:08,348 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-03 14:07:08,348 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 14:07:08,348 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 14:07:08,348 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 14:07:08,348 - rag_app - DEBUG - Received response with 3186 characters
+2025-04-03 14:07:08,350 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 14:07:08] "POST /query HTTP/1.1" 200 -
+2025-04-03 16:47:28,001 - httpcore.connection - DEBUG - close.started
+2025-04-03 16:47:28,068 - httpcore.connection - DEBUG - close.complete
+2025-04-03 16:47:28,068 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 16:47:28,069 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f34e97d3230>
+2025-04-03 16:47:28,070 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-03 16:47:28,070 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 16:47:28,070 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-03 16:47:28,070 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 16:47:28,070 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-03 16:47:28,098 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 20:47:28 GMT'), (b'Content-Length', b'1368')])
+2025-04-03 16:47:28,099 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-03 16:47:28,099 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-03 16:47:28,100 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 16:47:28,100 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 16:47:28,100 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 16:47:28,100 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='llama3.2:1b', modified_at=datetime.datetime(2025, 4, 2, 17, 3, 27, 526942, tzinfo=TzInfo(-04:00)), digest='baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878', size=1321098329, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='1.2B', quantization_level='Q8_0')), Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-03 16:47:28,102 - rag_app - DEBUG - Found 4 models in response.models
+2025-04-03 16:47:28,102 - rag_app - DEBUG - Added model: llama3.2:1b
+2025-04-03 16:47:28,102 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-03 16:47:28,102 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-03 16:47:28,102 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-03 16:47:28,102 - rag_app - DEBUG - Rendering index page with 4 models
+2025-04-03 16:47:28,103 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 16:47:28] "GET / HTTP/1.1" 200 -
+2025-04-03 19:43:47,707 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval.py', reloading
+2025-04-03 19:43:49,768 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 19:43:59,721 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-03 19:43:59,723 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-03 19:43:59,723 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-03 19:43:59,726 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-03 19:43:59,844 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 19:43:59,897 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-03 19:43:59,952 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-03 19:44:00,093 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 19:44:00,669 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-03 19:44:00,730 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-03 19:44:00,794 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-03 19:44:01,307 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-03 19:44:01,463 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-03 19:44:01,543 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-03 19:44:01,567 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-03 19:44:01,991 - chromadb.config - DEBUG - Starting component System
+2025-04-03 19:44:01,991 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-03 19:44:01,991 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-03 19:44:01,991 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-03 19:44:01,995 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-03 19:44:01,995 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-03 19:44:01,996 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-03 19:44:01,996 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-03 19:44:01,996 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-03 19:44:02,057 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-03 19:44:02,060 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-03 19:44:02,060 - rag_app - DEBUG - Initialization complete
+2025-04-03 19:44:02,152 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 19:44:02,153 - werkzeug - INFO -  * Debugger PIN: 647-245-065
+2025-04-03 19:44:15,040 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 19:44:15,040 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f82e31bcad0>
+2025-04-03 19:44:15,040 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-03 19:44:15,041 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 19:44:15,041 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-03 19:44:15,041 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 19:44:15,041 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-03 19:44:15,043 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 23:44:15 GMT'), (b'Content-Length', b'1368')])
+2025-04-03 19:44:15,044 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-03 19:44:15,045 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-03 19:44:15,045 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 19:44:15,045 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 19:44:15,045 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 19:44:15,046 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='llama3.2:1b', modified_at=datetime.datetime(2025, 4, 2, 17, 3, 27, 526942, tzinfo=TzInfo(-04:00)), digest='baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878', size=1321098329, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='1.2B', quantization_level='Q8_0')), Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-03 19:44:15,047 - rag_app - DEBUG - Found 4 models in response.models
+2025-04-03 19:44:15,047 - rag_app - DEBUG - Added model: llama3.2:1b
+2025-04-03 19:44:15,048 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-03 19:44:15,048 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-03 19:44:15,048 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-03 19:44:15,048 - rag_app - DEBUG - Rendering index page with 4 models
+2025-04-03 19:44:15,123 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 19:44:15] "GET / HTTP/1.1" 200 -
+2025-04-03 19:44:33,178 - rag_app - DEBUG - Received query request with text: 'list the states that the pictures were taken in', model: granite3.2-vision:latest
+2025-04-03 19:44:33,178 - rag_app - DEBUG - Processing query with text: 'list the states that the pictures were taken in', image: None, model: granite3.2-vision:latest
+2025-04-03 19:44:33,179 - rag_app - ERROR - Error querying GPSInfo_state: Expected where operator to be one of $gt, $gte, $lt, $lte, $ne, $eq, $in, $nin, got $exists in get.
+Traceback (most recent call last):
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/CollectionCommon.py", line 90, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/CollectionCommon.py", line 241, in _validate_and_prepare_get_request
+    validate_filter_set(filter_set=filters)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/types.py", line 345, in validate_filter_set
+    validate_where(filter_set["where"])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/types.py", line 659, in validate_where
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Expected where operator to be one of $gt, $gte, $lt, $lte, $ne, $eq, $in, $nin, got $exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dzoey/projects/picscan/rag_retrieval.py", line 461, in query_exif_field
+    results = text_collection.get(
+        where={full_field_name: {"$exists": True}},
+        include=["metadatas"]
+    )
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/Collection.py", line 126, in get
+    get_request = self._validate_and_prepare_get_request(
+        ids=ids,
+    ...<2 lines>...
+        include=include,
+    )
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/CollectionCommon.py", line 93, in wrapper
+    raise type(e)(msg).with_traceback(e.__traceback__)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/CollectionCommon.py", line 90, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/models/CollectionCommon.py", line 241, in _validate_and_prepare_get_request
+    validate_filter_set(filter_set=filters)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/types.py", line 345, in validate_filter_set
+    validate_where(filter_set["where"])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dzoey/projects/picscan/venv/lib64/python3.13/site-packages/chromadb/api/types.py", line 659, in validate_where
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Expected where operator to be one of $gt, $gte, $lt, $lte, $ne, $eq, $in, $nin, got $exists in get.
+2025-04-03 19:44:33,184 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 19:44:33] "POST /query HTTP/1.1" 200 -
+2025-04-03 19:46:24,475 - werkzeug - INFO -  * Detected change in '/home/dzoey/projects/picscan/rag_retrieval.py', reloading
+2025-04-03 19:46:26,000 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 19:46:34,522 - rag_app - DEBUG - Initializing sentence transformer and ChromaDB collections
+2025-04-03 19:46:34,523 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-03 19:46:34,523 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-03 19:46:34,525 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-03 19:46:34,635 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 19:46:34,699 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-04-03 19:46:34,758 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 200 0
+2025-04-03 19:46:34,811 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 200 0
+2025-04-03 19:46:34,868 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 200 0
+2025-04-03 19:46:34,933 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-04-03 19:46:34,987 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-03 19:46:35,257 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-03 19:46:35,405 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 6759
+2025-04-03 19:46:35,465 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6759
+2025-04-03 19:46:35,490 - urllib3.util.retry - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-03 19:46:35,960 - chromadb.config - DEBUG - Starting component System
+2025-04-03 19:46:35,960 - chromadb.config - DEBUG - Starting component Posthog
+2025-04-03 19:46:35,960 - chromadb.config - DEBUG - Starting component OpenTelemetryClient
+2025-04-03 19:46:35,961 - chromadb.config - DEBUG - Starting component SqliteDB
+2025-04-03 19:46:35,965 - chromadb.config - DEBUG - Starting component SimpleQuotaEnforcer
+2025-04-03 19:46:35,965 - chromadb.config - DEBUG - Starting component SimpleRateLimitEnforcer
+2025-04-03 19:46:35,965 - chromadb.config - DEBUG - Starting component LocalSegmentManager
+2025-04-03 19:46:35,965 - chromadb.config - DEBUG - Starting component LocalExecutor
+2025-04-03 19:46:35,965 - chromadb.config - DEBUG - Starting component SegmentAPI
+2025-04-03 19:46:36,025 - chromadb.api.segment - DEBUG - Collection image_rag_text already exists, returning existing collection.
+2025-04-03 19:46:36,028 - chromadb.api.segment - DEBUG - Collection image_rag_image already exists, returning existing collection.
+2025-04-03 19:46:36,029 - rag_app - DEBUG - Initialization complete
+2025-04-03 19:46:36,042 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 19:46:36,042 - werkzeug - INFO -  * Debugger PIN: 647-245-065
+2025-04-03 19:46:44,152 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 19:46:44,153 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f83103c8ad0>
+2025-04-03 19:46:44,154 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-04-03 19:46:44,155 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 19:46:44,155 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-04-03 19:46:44,155 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 19:46:44,155 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-04-03 19:46:44,157 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 23:46:44 GMT'), (b'Content-Length', b'1368')])
+2025-04-03 19:46:44,158 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-04-03 19:46:44,158 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-04-03 19:46:44,158 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 19:46:44,159 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 19:46:44,159 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Raw Ollama response structure: models=[Model(model='llama3.2:1b', modified_at=datetime.datetime(2025, 4, 2, 17, 3, 27, 526942, tzinfo=TzInfo(-04:00)), digest='baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878', size=1321098329, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='1.2B', quantization_level='Q8_0')), Model(model='granite-code:8b', modified_at=datetime.datetime(2025, 3, 21, 10, 53, 43, 121101, tzinfo=TzInfo(-04:00)), digest='36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd', size=4590918937, details=ModelDetails(parent_model='', format='gguf', family='llama', families=['llama'], parameter_size='8.1B', quantization_level='Q4_0')), Model(model='phi4:latest', modified_at=datetime.datetime(2025, 3, 6, 0, 15, 16, 986665, tzinfo=TzInfo(-05:00)), digest='ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba', size=9053116391, details=ModelDetails(parent_model='', format='gguf', family='phi3', families=['phi3'], parameter_size='14.7B', quantization_level='Q4_K_M')), Model(model='granite3.2-vision:latest', modified_at=datetime.datetime(2025, 3, 5, 13, 39, 57, 419995, tzinfo=TzInfo(-05:00)), digest='3be41a661804ad72cd08269816c5a145f1df6479ad07e2b3a7e29dba575d2669', size=2437852465, details=ModelDetails(parent_model='', format='gguf', family='granite', families=['granite', 'clip'], parameter_size='2.5B', quantization_level='Q4_K_M'))]
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Found 4 models in response.models
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Added model: llama3.2:1b
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Added model: granite-code:8b
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Added model: phi4:latest
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Added model: granite3.2-vision:latest
+2025-04-03 19:46:44,160 - rag_app - DEBUG - Rendering index page with 4 models
+2025-04-03 19:46:44,170 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 19:46:44] "GET / HTTP/1.1" 200 -
+2025-04-03 19:47:00,523 - rag_app - DEBUG - Received query request with text: 'list the cities where the pictures were taken', model: granite3.2-vision:latest
+2025-04-03 19:47:00,523 - rag_app - DEBUG - Processing query with text: 'list the cities where the pictures were taken', image: None, model: granite3.2-vision:latest
+2025-04-03 19:47:00,670 - rag_app - DEBUG - Found 151/174 entries with GPSInfo_city
+2025-04-03 19:47:00,671 - rag_app - DEBUG - Found 11 unique values for GPSInfo_city: ['Atlanta', 'Baltimore', 'Fort Worth', 'Hampton', 'Landover', 'Philadelphia', 'Reisterstown', 'Rockville', 'Silver Spring', 'Trappe', 'Virginia Beach']
+2025-04-03 19:47:00,672 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 19:47:00] "POST /query HTTP/1.1" 200 -
+2025-04-03 19:47:26,250 - rag_app - DEBUG - Received query request with text: 'list the picture file names that were taken between 2014 and 2016', model: granite3.2-vision:latest
+2025-04-03 19:47:26,250 - rag_app - DEBUG - Processing query with text: 'list the picture file names that were taken between 2014 and 2016', image: None, model: granite3.2-vision:latest
+2025-04-03 19:47:26,250 - rag_app - DEBUG - Detected metadata focus: None
+2025-04-03 19:47:26,251 - rag_app - DEBUG - Generating embedding for query: list the picture file names that were taken between 2014 and 2016
+2025-04-03 19:47:26,384 - rag_app - DEBUG - Querying text collection with embedding
+2025-04-03 19:47:26,401 - chromadb.config - DEBUG - Starting component PersistentLocalHnswSegment
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Added document 1 (1684 chars)
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Added document 2 (1494 chars)
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Added document 3 (1821 chars)
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Added document 4 (1384 chars)
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Added document 5 (1653 chars)
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Generated context with 8075 characters (~2018 tokens)
+2025-04-03 19:47:26,452 - rag_app - DEBUG - Generated prompt with 8075 characters of context
+2025-04-03 19:47:26,453 - rag_app - DEBUG - Sending query to Ollama model: granite3.2-vision:latest
+2025-04-03 19:47:26,454 - httpcore.connection - DEBUG - close.started
+2025-04-03 19:47:26,454 - httpcore.connection - DEBUG - close.complete
+2025-04-03 19:47:26,454 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2025-04-03 19:47:26,455 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8311592d50>
+2025-04-03 19:47:26,455 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-03 19:47:26,456 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-03 19:47:26,456 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-03 19:47:26,456 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-03 19:47:26,456 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-03 19:51:53,776 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 03 Apr 2025 23:51:53 GMT'), (b'Content-Length', b'1064')])
+2025-04-03 19:51:53,777 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-04-03 19:51:53,777 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-03 19:51:53,777 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-03 19:51:53,777 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-03 19:51:53,777 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-03 19:51:53,777 - rag_app - DEBUG - Received response with 734 characters
+2025-04-03 19:51:53,781 - werkzeug - INFO - 127.0.0.1 - - [03/Apr/2025 19:51:53] "POST /query HTTP/1.1" 200 -

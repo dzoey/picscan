@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "${input:image_dir}", 
+                "--db_path=${input:faiss_file}",
+                "--log=DEBUG",
+                "--vlm=granite3.2-vision"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "image_dir",
+            "description": "The top level directory containing the image files to analyze",
+            "default": "/home/dzoey/Pictures/Photos/Google Photos",
+            "type":"promptString"
+        },
+        {
+            "id": "faiss_file",
+            "description": "The backing file store for the vector database of analyzed image data",
+            "default": "/home/dzoey/projects/picscan/ragdb",
+            "type": "promptString"
+        }
+    ]
+}
