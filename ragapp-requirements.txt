@@ -1,0 +1,12 @@
+flask>=2.0.0
+python-dotenv>=0.19.0
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+langchain-ollama>=0.0.1
+langchain-huggingface>=0.0.5
+langchain-chroma>=0.0.1
+chromadb>=0.4.0
+pillow>=9.0.0
+ollama>=0.1.0
+sentence-transformers>=2.2.0
