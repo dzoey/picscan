@@ -260,30 +260,86 @@
                 
                 const result = await response.json();
                 
-                // Display text response
-                document.getElementById('response-text').textContent = result.text;
-                
-                // Display images if any
+                // Clear previous response
+                const responseTextElement = document.getElementById('response-text');
                 const imagesContainer = document.getElementById('response-images');
                 imagesContainer.innerHTML = '';
                 
-                if (result.images && result.images.length > 0) {
-                    result.images.forEach(img => {
-                        const imageItem = document.createElement('div');
-                        imageItem.className = 'image-item';
-                        
-                        const imgElement = document.createElement('img');
-                        imgElement.src = `data:image/${img.format};base64,${img.data}`;
-                        imgElement.alt = `Image from ${img.path}`;
-                        
-                        const caption = document.createElement('div');
-                        caption.className = 'image-caption';
-                        caption.textContent = img.path;
-                        
-                        imageItem.appendChild(imgElement);
-                        imageItem.appendChild(caption);
-                        imagesContainer.appendChild(imageItem);
-                    });
+                // Check if we have HTML content to display
+                if (result.is_html && result.html_content) {
+                    // Set HTML content
+                    responseTextElement.innerHTML = result.html_content;
+                    imagesContainer.style.display = 'none';
+                } else {
+                    // Handle text response
+                    responseTextElement.textContent = result.text || 'No text response';
+                    imagesContainer.style.display = 'flex';
+                    
+                    // Try to display images from various sources
+                    const displayedImages = new Set(); // Track which images we've already displayed
+                    
+                    // First try images array if present
+                    if (result.images && result.images.length > 0) {
+                        result.images.forEach(img => {
+                            const imageItem = document.createElement('div');
+                            imageItem.className = 'image-item';
+                            
+                            const imgElement = document.createElement('img');
+                            imgElement.src = `data:image/${img.format};base64,${img.data}`;
+                            imgElement.alt = `Image from ${img.path}`;
+                            
+                            const caption = document.createElement('div');
+                            caption.className = 'image-caption';
+                            caption.textContent = img.path;
+                            
+                            imageItem.appendChild(imgElement);
+                            imageItem.appendChild(caption);
+                            imagesContainer.appendChild(imageItem);
+                            
+                            displayedImages.add(img.path);
+                        });
+                    }
+                    
+                    // Then check documents for image paths
+                    if (result.documents && result.documents.length > 0) {
+                        result.documents.forEach(doc => {
+                            if (doc.metadata && doc.metadata.path) {
+                                const path = doc.metadata.path;
+                                
+                                // Skip if we already displayed this image
+                                if (displayedImages.has(path)) {
+                                    return;
+                                }
+                                
+                                // Check if it's an image file
+                                if (path.toLowerCase().match(/\.(jpg|jpeg|png|gif)$/)) {
+                                    const filename = path.split('/').pop();
+                                    
+                                    const imageItem = document.createElement('div');
+                                    imageItem.className = 'image-item';
+                                    
+                                    const imgElement = document.createElement('img');
+                                    // Try with various URL formats
+                                    imgElement.setAttribute('onerror', 'this.onerror=null; this.src="/image/'+filename+'";');
+                                    // First try the full path
+                                    imgElement.src = path.startsWith('/') 
+                                        ? `/image${path}` 
+                                        : `/image/${path}`;
+                                    imgElement.alt = filename;
+                                    
+                                    const caption = document.createElement('div');
+                                    caption.className = 'image-caption';
+                                    caption.textContent = filename;
+                                    
+                                    imageItem.appendChild(imgElement);
+                                    imageItem.appendChild(caption);
+                                    imagesContainer.appendChild(imageItem);
+                                    
+                                    displayedImages.add(path);
+                                }
+                            }
+                        });
+                    }
                 }
                 
                 // Show the response section
@@ -297,6 +353,26 @@
                 document.querySelector('.loading').style.display = 'none';
             }
         });
+        
+        // Helper function to add error handling to images
+        function handleImageErrors() {
+            document.querySelectorAll('.image-item img').forEach(img => {
+                img.onerror = function() {
+                    if (!this.dataset.triedFallback) {
+                        // Try getting just the filename
+                        const filename = this.src.split('/').pop();
+                        this.src = `/image/${filename}`;
+                        this.dataset.triedFallback = 'true';
+                    } else {
+                        // Replace with error placeholder
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error-placeholder';
+                        errorDiv.innerHTML = 'Image not available';
+                        this.parentNode.replaceChild(errorDiv, this);
+                    }
+                };
+            });
+        }
     </script>
 </body>
 </html>
