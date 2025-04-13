@@ -163,8 +163,8 @@ def serve_image(image_path):
 
 if __name__ == '__main__':
     # Ensure all required directories exist
-    config.TEMP_UPLOADS_DIR.mkdir(exist_ok=True)
-    
+    Path(config.TEMP_UPLOADS_DIR).mkdir(exist_ok=True)
+
     # Run the Flask application
     app.run(
         debug=config.FLASK_DEBUG,

@@ -4,6 +4,9 @@ from typing import List, Dict, Optional, Tuple, Any, Union
 import json
 import re
 
+# Add import for config
+import config
+
 # Update import for Ollama
 from langchain_ollama import OllamaLLM
 from langchain_core.prompts import PromptTemplate
@@ -133,41 +136,93 @@ class QueryProcessor:
             "color space": "exif_ColorSpace"
         }
     
-    def _is_factual_query(self, query_text: str) -> bool:
-        """Determine if a query is factual (looking for information) vs. visual (looking for images)."""
-        # Keywords that suggest factual queries
-        factual_keywords = [
-            "who", "what", "when", "where", "why", "how", "which", "did", "was", "were",
-            "explain", "describe", "define", "history", "historical", "fact", "date",
-            "year", "century", "location", "person", "name", "event", "concept",
-            "king", "queen", "president", "leader", "author", "artist", "inventor",
-            "discover", "create", "found", "establish", "develop", "design", "build"
-        ]
+    def _is_factual_query(self, query_text: str, llm=None) -> bool:
+        """Determine if a query is factual using LLM with keyword fallback."""
+        # First try using the LLM-based classifier if enabled
+        if config.ENABLE_LLM_CLASSIFICATION:
+            # If we don't have an LLM instance yet, initialize one specifically for classification
+            if llm is None:
+                try:
+                    classification_llm = OllamaLLM(
+                        model=config.SMALL_LLM_MODEL,  # Use small model for classification
+                        temperature=config.CLASSIFICATION_TEMPERATURE,
+                        repeat_penalty=config.CLASSIFICATION_REPEAT_PENALTY,
+                        context_window=config.LLM_CONTEXT_SIZE,
+                        num_predict=config.CLASSIFICATION_NUM_PREDICT
+                    )
+                except Exception as e:
+                    logger.error(f"Error initializing classification LLM: {e}")
+                    # Fall back to keyword matching if LLM initialization fails
+                    return self._is_factual_query_keywords(query_text)
+            else:
+                classification_llm = llm
+                
+            classification = self._classify_query_with_llm(query_text, classification_llm)
+            if classification is not None:
+                # Return True if classification is "FACTUAL", False if "VISUAL"
+                return classification == "FACTUAL"
         
-        # Keywords that suggest image/visual queries
-        visual_keywords = [
-            "show", "picture", "image", "photo", "see", "look", "display", "visual",
-            "appearance", "view", "scene", "photograph", "camera", "shot", "capture",
-            "portrait", "landscape", "selfie", "vacation", "trip", "holiday", "album",
-            "gallery", "collection", "pictures", "photos", "images", "show me"
-        ]
-        
-        # Check if the query contains image-related terms
-        contains_visual_terms = any(keyword in query_text.lower() for keyword in visual_keywords)
-        
-        # Check if the query is primarily factual
-        contains_factual_terms = any(keyword in query_text.lower().split() for keyword in factual_keywords)
-        
-        # If there are explicit visual terms, treat as visual query regardless of factual terms
-        if contains_visual_terms:
-            return False
-        
-        # If it contains factual terms and no visual terms, it's likely a factual query
-        if contains_factual_terms:
-            return True
+        # Fall back to keyword matching if LLM classification fails or is disabled
+        return self._is_factual_query_keywords(query_text)
+
+    def _classify_query_with_llm(self, query_text, llm):
+        """Use the provided LLM to classify the query as FACTUAL or VISUAL."""
+        prompt = f"""Classify the following user query as either FACTUAL or VISUAL.
+
+    DEFINITIONS:
+    - FACTUAL: Questions seeking information, statistics, counts, or data extraction from the image collection without necessarily viewing the images themselves.
+    - VISUAL: Requests to see, view, show, or display specific types of images. The user primarily wants to SEE the actual images.
+
+    Key indicators of VISUAL queries:
+    - Contains verbs like "show", "see", "view", "display", "find", "get"
+    - Contains nouns like "pictures", "photos", "images" 
+    - The primary intent is to view the images themselves
+    - User is asking what something "looks like"
+    - Any request about showing/displaying pictures is VISUAL by default
+
+    Examples of VISUAL queries (all of these are VISUAL):
+    - "Show me scenic pictures"
+    - "Find pictures with vehicles"
+    - "Get photos from California"
+    - "What pictures have people in them?"
+    - "I want to see images of mountains"
+    - "Show pictures taken last year"
+    - "Find photos with multiple people and trees"
+
+    Examples of FACTUAL queries (these are seeking information, not primarily images):
+    - "How many pictures were taken in 2022?"
+    - "What camera was used for most photos?"
+    - "When was my trip to Paris?"
+    - "Count how many photos have people in them"
+    - "Which location appears most in my photos?"
+
+    USER QUERY: {query_text}
+
+    CLASSIFICATION RULE:
+    If the query is asking to SEE, SHOW, VIEW, FIND or GET PICTURES/PHOTOS/IMAGES, it is VISUAL.
+    When in doubt, prefer VISUAL for any query about pictures.
+
+    Your classification (respond with only FACTUAL or VISUAL):"""
+
+        try:
+            response = llm.invoke(prompt)
+            result = response.strip().upper()
             
-        # Default to not factual (i.e., visual) if unclear - safer to show images than hide them
-        return False
+            # Make the classification more reliable by accepting partial matches
+            if "VISUAL" in result:
+                logger.debug(f"LLM classified query as VISUAL: {query_text}")
+                return "VISUAL"
+            elif "FACTUAL" in result:
+                logger.debug(f"LLM classified query as FACTUAL: {query_text}")
+                return "FACTUAL"
+            else:
+                # Default to VISUAL for ambiguous responses
+                logger.debug(f"LLM gave ambiguous classification for query, defaulting to VISUAL: {query_text}")
+                return "VISUAL"
+        except Exception as e:
+            logger.error(f"Error classifying query: {e}")
+            # Default to VISUAL on error to ensure images are displayed
+            return "VISUAL"
 
     def _check_document_relevance(self, query: str, docs: List[Any], threshold: float = 0.4) -> bool:
         """Check if any documents are semantically relevant to the query."""
@@ -234,6 +289,41 @@ class QueryProcessor:
         except Exception as e:
             logger.error(f"Error getting direct answer: {str(e)}")
             return f"I'm not able to provide information about {question} at this time."
+        
+    def _initialize_llm(self, model):
+        """Initialize an LLM instance with the specified model."""
+        # Check if the model is a text generation model
+        if not self.is_text_generation_model(model):
+            logger.warning(f"Model {model} appears to be an embedding model, not suitable for text generation")
+            return None
+            
+        # Initialize the model with timeout
+        try:
+            llm = OllamaLLM(
+                model=model,
+                context_window=config.LLM_CONTEXT_SIZE,
+                temperature=config.DEFAULT_TEMPERATURE,
+                repeat_penalty=config.DEFAULT_REPEAT_PENALTY,
+                num_predict=config.DEFAULT_NUM_PREDICT,
+                timeout=config.DEFAULT_TIMEOUT
+            )
+            return llm
+        except Exception as e:
+            logger.error(f"Error initializing Ollama LLM with model {model}: {e}")
+            # Try fallback to a default model from the config
+            try:
+                llm = OllamaLLM(
+                    model=config.FALLBACK_MODELS[0],
+                    context_window=config.LLM_CONTEXT_SIZE,
+                    temperature=config.DEFAULT_TEMPERATURE,
+                    repeat_penalty=config.DEFAULT_REPEAT_PENALTY,
+                    num_predict=config.DEFAULT_NUM_PREDICT,
+                    timeout=config.DEFAULT_TIMEOUT
+                )
+                return llm
+            except Exception as e2:
+                logger.error(f"Error initializing fallback model: {e2}")
+                return None
             
     def is_text_generation_model(self, model_name):
         """Check if the model is capable of text generation."""
@@ -246,6 +336,7 @@ class QueryProcessor:
                 return False
                 
         return True
+    
         
     def extract_metadata_query(self, query_text: str, llm):
         """
@@ -648,7 +739,7 @@ class QueryProcessor:
         logger.debug(f"Processing EXIF metadata query: {query_text}")
         
         # Extract locations or other EXIF parameters from the query
-        exif_params = self._extract_metadata_from_query(query_text)
+        exif_params = self.extract_metadata_query(query_text, llm)
         logger.debug(f"Extracted EXIF parameters: {exif_params}")
         
         # Construct metadata filters
@@ -884,45 +975,39 @@ If the information is not available in the metadata, please state that clearly."
     
     
     def process_query(self, 
-                user_text: str, 
-                image_path: Optional[str] = None,
-                model: str = "granite3.2-vision:latest") -> Dict[str, Any]:
+            user_text: str, 
+            image_path: Optional[str] = None,
+            model: str = config.DEFAULT_LLM_MODEL) -> Dict[str, Any]:
         """Process a user query using RAG techniques."""
         try:
             logger.debug(f"Processing query with text: '{user_text}', image: {image_path}, model: {model}")
+
+             # Initialize LLM first since we need it for both factual and visual queries
+            llm = self._initialize_llm(model)
             
             # Check if this is a factual query that shouldn't display images
-            is_factual_query = self._is_factual_query(user_text)
+            is_factual_query = self._is_factual_query(user_text, llm)
             logger.debug(f"Query classified as factual: {is_factual_query}")
             
+            
+            # HANDLE FACTUAL QUERIES IMMEDIATELY - Exit early before retrieval
+            if is_factual_query:
+                # If this is a factual query, provide direct answer without images
+                direct_answer = self._get_direct_answer(user_text, llm)
+                logger.debug("Providing direct answer for factual query (no document retrieval)")
+                return {
+                    "answer": direct_answer,
+                    "text": direct_answer,
+                    "documents": [],  # Don't include documents for factual queries
+                    "query_type": "direct_answer",
+                    "suppress_images": True
+                }
+                
             # Check if the model is a text generation model
             if not self.is_text_generation_model(model):
                 logger.warning(f"Model {model} appears to be an embedding model, not suitable for text generation")
                 llm = None
-            else:
-                # Initialize the model with timeout
-                try:
-                    llm = OllamaLLM(
-                        model=model,
-                        temperature=0.1,
-                        repeat_penalty=1.2,
-                        num_predict=2000,
-                        timeout=60
-                    )
-                except Exception as e:
-                    logger.error(f"Error initializing Ollama LLM with model {model}: {e}")
-                    # Try fallback to a default model
-                    try:
-                        llm = OllamaLLM(
-                            model="llama3.2:1b",
-                            temperature=0.1,
-                            repeat_penalty=1.2,
-                            num_predict=2000,
-                            timeout=60
-                        )
-                    except Exception as e2:
-                        logger.error(f"Error initializing fallback model: {e2}")
-                        llm = None
+        
                 
             # Check if this is a query about multiple people in photos
             is_multiple_people_query = any(term in user_text.lower() for term in 
@@ -1019,7 +1104,7 @@ If the information is not available in the metadata, please state that clearly."
                     
                     try:
                         # Use batched processing with the dynamic batch size
-                        batch_result = process_documents_in_batches(docs, user_text, model, batch_size=batch_size)
+                        batch_result = process_documents_in_batches(docs, user_text, model, batch_size=batch_size, llm=llm)
                         
                         # Check if we got a dictionary with response and doc_mapping
                         if isinstance(batch_result, dict) and "response" in batch_result:
@@ -1141,13 +1226,13 @@ def get_available_models():
             return model_names
         else:
             logger.error(f"Failed to get models: {response.status_code}")
-            # Return some default models
-            return ["granite3.2-vision:latest", "llava:latest", "llama3.2:1b"]
+            # Return fallback models from config
+            return config.FALLBACK_MODELS
             
     except Exception as e:
         logger.error(f"Error getting available models: {str(e)}")
-        # Return some default models if there's an error
-        return ["granite3.2-vision:latest", "llava:latest", "llama3.2:1b"]
+        # Return fallback models from config
+        return config.FALLBACK_MODELS
 
 # Optional singleton instance
 _processor_instance = None
@@ -1160,7 +1245,7 @@ def get_processor():
     return _processor_instance
 
 # Add a standalone wrapper function for backward compatibility
-def process_query(user_text, image_path=None, model="llama3.2:1b"):
+def process_query(user_text, image_path=None, model=config.DEFAULT_LLM_MODEL):
     """
     Process a query with the QueryProcessor.
     This function exists for backward compatibility.

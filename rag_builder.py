@@ -22,23 +22,30 @@ import torchvision
 import torchvision.transforms as transforms
 import hashlib
 
+# Import shared configuration
+from config import (
+    DB_PATH, 
+    DB_COLLECTION_NAME,
+    TEXT_COLLECTION_NAME,
+    IMAGE_COLLECTION_NAME,
+    VISION_LLM_MODEL,
+    VISION_TEMPERATURE,
+    VISION_REPEAT_PENALTY,
+    VISION_NUM_PREDICT,
+    VISION_TIMEOUT,
+    EMBEDDING_MODEL,
+    SUPPORTED_IMAGE_TYPES,
+    GEOCODING_URL,
+    GEOCODING_USER_AGENT,
+    GEOCODING_RATE_LIMIT
+)
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger("rag_builder")
-
-# Default configuration
-DEFAULT_CONFIG = {
-    "geocoding_url": "https://nominatim.openstreetmap.org/reverse",
-    "geocoding_user_agent": "RAGBuilder/1.0",
-    "geocoding_rate_limit_seconds": 1.0,
-    "vlm_model": "granite3.2-vision",
-    "embedding_model": "all-MiniLM-L6-v2",
-    "db_collection_name": "image_rag",
-    "image_extensions": [".jpg", ".jpeg", ".png", ".gif"]
-}
 
 @dataclass
 class GeoLocation:
@@ -119,28 +126,24 @@ def convert_gps_to_decimal(gps_coords: Tuple[Any, Any, Any], gps_ref: str) -> fl
         logger.warning(f"Error converting GPS coordinates: {e}")
         return 0.0
 
-def get_location_from_gps(latitude: float, longitude: float, config: Dict[str, Any] = None) -> GeoLocation:
+def get_location_from_gps(latitude: float, longitude: float) -> GeoLocation:
     """
     Gets location details from latitude and longitude using geocoding.
     
     Args:
         latitude: The latitude in decimal format
         longitude: The longitude in decimal format
-        config: Configuration dictionary with options
-    
+        
     Returns:
         GeoLocation object with location details
     """
-    if config is None:
-        config = DEFAULT_CONFIG
-    
     if not latitude or not longitude:
         return GeoLocation()
     
     location = GeoLocation(latitude=latitude, longitude=longitude)
     
     try:
-        # Using OpenStreetMap's Nominatim service
+        # Using OpenStreetMap's Nominatim service with config variables
         params = {
             "format": "json",
             "lat": str(latitude),
@@ -150,18 +153,18 @@ def get_location_from_gps(latitude: float, longitude: float, config: Dict[str, A
         }
         
         headers = {
-            "User-Agent": config["geocoding_user_agent"]
+            "User-Agent": GEOCODING_USER_AGENT
         }
         
         response = requests.get(
-            config["geocoding_url"], 
+            GEOCODING_URL, 
             params=params,
             headers=headers,
             timeout=10
         )
         
-        # Add a delay to respect service's usage policy
-        time.sleep(config["geocoding_rate_limit_seconds"])
+        # Add a delay to respect service's usage policy using config rate limit
+        time.sleep(GEOCODING_RATE_LIMIT)
         
         if response.status_code != 200:
             logger.warning(f"Geocoding service returned status code {response.status_code}")
@@ -296,17 +299,8 @@ def get_exif_data(image_path: str) -> Optional[Dict[str, Any]]:
         logger.warning(f"Error extracting EXIF data from {image_path}: {e}")
         return None
 
+
 def generate_image_description(image_path: str, model_name: str) -> Optional[str]:
-    """
-    Generates a description for an image using a vision model.
-    
-    Args:
-        image_path: Path to the image file.
-        model_name: The name of the Ollama model to use.
-        
-    Returns:
-        A string containing the image description, or None if an error occurred.
-    """
     try:
         filename = os.path.basename(image_path)
         logger.info(f"Generating description for {image_path}")
@@ -326,6 +320,7 @@ For context, the filename is: {filename}
 
 Format your response as a cohesive, detailed paragraph that would be useful for image retrieval through semantic search."""
         
+        # Remove the timeout parameter
         response = ollama.chat(
             model=model_name,
             messages=[
@@ -334,7 +329,13 @@ Format your response as a cohesive, detailed paragraph that would be useful for 
                     "content": prompt,
                     "images": [image_path]
                 }
-            ]
+            ],
+            options={
+                "temperature": VISION_TEMPERATURE,
+                "repeat_penalty": VISION_REPEAT_PENALTY,
+                "num_predict": VISION_NUM_PREDICT,
+            }
+            # timeout parameter removed
         )
         
         return response.message.content
@@ -397,35 +398,32 @@ def find_images(directory: str, extensions: List[str]) -> List[str]:
     logger.info(f"Found {len(image_paths)} images in {directory}")
     return image_paths
 
-import hashlib
-
 def get_image_id(image_path: str) -> str:
     """Generate a consistent ID for an image based on its path"""
     return f"img_{hashlib.md5(image_path.encode('utf-8')).hexdigest()}"
 
-def build_rag_data(directory: str, config: Dict[str, Any] = None):
+def build_rag_data(directory: str, db_path: str = None, vlm_model: str = None):
     """
     Build RAG data from images in a directory, skipping already processed images.
     
     Args:
         directory: Directory containing images
-        config: Configuration dictionary with options
+        db_path: Optional override for database path
+        vlm_model: Optional override for VLM model
     """
-    if config is None:
-        config = DEFAULT_CONFIG
+    # Use config values but allow overrides from command line
+    db_path = db_path or DB_PATH
+    vlm_model = vlm_model or VISION_LLM_MODEL
     
     # Find all images in directory
-    image_paths = find_images(
-        directory, 
-        [ext.lstrip(".") for ext in config["image_extensions"]]
-    )
+    image_paths = find_images(directory, SUPPORTED_IMAGE_TYPES)
     
     # Initialize ChromaDB
-    client = chromadb.PersistentClient(path=config.get("db_path", "ragdb"))
+    client = chromadb.PersistentClient(path=db_path)
     
-    # Create separate collections for text and image embeddings
-    text_collection = client.get_or_create_collection(f"{config['db_collection_name']}_text")
-    image_collection = client.get_or_create_collection(f"{config['db_collection_name']}_image")
+    # Create separate collections for text and image embeddings using config names
+    text_collection = client.get_or_create_collection(TEXT_COLLECTION_NAME)
+    image_collection = client.get_or_create_collection(IMAGE_COLLECTION_NAME)
     
     # Get existing file paths from the database
     existing_paths = set()
@@ -442,7 +440,7 @@ def build_rag_data(directory: str, config: Dict[str, Any] = None):
         logger.warning(f"Error retrieving existing items: {e}")
     
     # Initialize sentence transformer
-    sentence_model = SentenceTransformer(config["embedding_model"])
+    sentence_model = SentenceTransformer(EMBEDDING_MODEL)
     
     processed_count = 0
     skipped_count = 0
@@ -460,10 +458,7 @@ def build_rag_data(directory: str, config: Dict[str, Any] = None):
             image_id = get_image_id(image_path)
                 
             # Get image description
-            description = generate_image_description(
-                image_path, 
-                config["vlm_model"]
-            )
+            description = generate_image_description(image_path, vlm_model)
             
             if not description:
                 continue
@@ -541,14 +536,14 @@ def main():
     
     parser.add_argument(
         "--db_path", 
-        default="ragdb",
-        help="The database path to store vectors (default: ragdb)"
+        default=DB_PATH,
+        help=f"The database path to store vectors (default: {DB_PATH})"
     )
     
     parser.add_argument(
         "--vlm", 
-        default=DEFAULT_CONFIG["vlm_model"],
-        help=f"The VLM model to use (default: {DEFAULT_CONFIG['vlm_model']})"
+        default=VISION_LLM_MODEL,
+        help=f"The VLM model to use (default: {VISION_LLM_MODEL})"
     )
     
     parser.add_argument(
@@ -563,13 +558,8 @@ def main():
     # Configure logging level
     logger.setLevel(getattr(logging, args.log))
     
-    # Set up configuration
-    config = DEFAULT_CONFIG.copy()
-    config["vlm_model"] = args.vlm
-    config["db_path"] = args.db_path
-    
-    # Build RAG data
-    build_rag_data(args.image_dir, config)
+    # Build RAG data with command line overrides if specified
+    build_rag_data(args.image_dir, args.db_path, args.vlm)
 
 if __name__ == "__main__":
     main()

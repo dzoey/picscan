@@ -6,6 +6,7 @@ from typing import Optional, Dict, Any, Tuple, List
 from langchain_core.documents import Document
 from langchain_ollama import OllamaLLM
 from .embeddings import EmbeddingManager
+import config  # Add import for config
 
 # Get your logger
 logger = logging.getLogger("rag_app")
@@ -52,9 +53,9 @@ def get_langchain_retriever(query_text, top_k=None, metadata_filters=None, score
         # Use higher threshold for factual queries to avoid irrelevant results
         if any(keyword in query_text.lower().split() for keyword in 
               ["who", "what", "when", "where", "why", "how", "which", "king", "queen", "president"]):
-            score_threshold = 0.6  # Use a much higher threshold (0.6 instead of 0.35)
+            score_threshold = 0.8  # Use a much higher threshold (0.8 instead of 0.35)
         else:
-            score_threshold = 0.3  # Also increase the default threshold
+            score_threshold = 0.5  # Also increase the default threshold
             
     logger.debug(f"Using similarity score threshold: {score_threshold}")
     
@@ -621,9 +622,8 @@ def retrieve_with_metadata_awareness(query_text, top_k=None):
     
     return all_docs, query_type
 
-def process_documents_in_batches(docs, user_text, model_type="llama3.2:1b", batch_size=10):
+def process_documents_in_batches(docs, user_text, model_type=config.DEFAULT_LLM_MODEL, batch_size=10, llm=None):
     """Process documents in batches to handle larger document sets."""
-
     
     logger = logging.getLogger("rag_app")
     logger.debug(f"Processing {len(docs)} documents in batches of {batch_size}")
@@ -644,6 +644,7 @@ def process_documents_in_batches(docs, user_text, model_type="llama3.2:1b", batc
         
         formatted_batch = f"BATCH {i//batch_size + 1} OF {(total_docs + batch_size - 1) // batch_size}:\n\n"
         
+        
         for j, doc in enumerate(batch):
             doc_idx = i + j + 1  # Global document index (1-based)
             
@@ -661,35 +662,63 @@ def process_documents_in_batches(docs, user_text, model_type="llama3.2:1b", batc
             
             # Format the document entry with clear numbering
             formatted_batch += f"PHOTO {doc_idx} - {filename}\n"
-            formatted_batch += f"DESCRIPTION: {doc.page_content.strip()}\n\n"
+            formatted_batch += f"DESCRIPTION: {doc.page_content.strip()}\n"
+
+            # Add explicit metadata section
+            formatted_batch += "METADATA:\n"
+            # Extract date/time
+            if "exif_DateTimeOriginal" in metadata and metadata["exif_DateTimeOriginal"]:
+                formatted_batch += f"Time: {metadata.get('exif_DateTimeOriginal')}\n"
+            elif "exif_DateTimeDigitized" in metadata and metadata["exif_DateTimeDigitized"]:
+                formatted_batch += f"Time: {metadata.get('exif_DateTimeDigitized')}\n"
+
+            # Extract location
+            location_parts = []
+            if "exif_GPSInfo_city" in metadata and metadata["exif_GPSInfo_city"]:
+                location_parts.append(metadata["exif_GPSInfo_city"])
+            if "exif_GPSInfo_state" in metadata and metadata["exif_GPSInfo_state"]:
+                location_parts.append(metadata["exif_GPSInfo_state"])
+            if "exif_GPSInfo_country" in metadata and metadata["exif_GPSInfo_country"]:
+                location_parts.append(metadata["exif_GPSInfo_country"])
+
+            if location_parts:
+                formatted_batch += f"Location: {', '.join(location_parts)}\n"
+
+            formatted_batch += "\n"
         
         formatted_batches.append(formatted_batch)
     
-    # Initialize the LLM directly
-    try:
-        llm = OllamaLLM(
-            model=model_type,
-            temperature=0.1,
-            repeat_penalty=1.2,
-            num_predict=2000,
-            timeout=60
-        )
-        logger.debug(f"Successfully initialized LLM with model {model_type}")
-    except Exception as e:
-        logger.error(f"Error initializing LLM with model {model_type}: {e}")
-        # Try fallback model
+    # Use provided LLM if available
+    if llm is not None:
+        logger.debug(f"Using provided LLM instance")
+    else:
+        # Initialize the LLM only if not provided
         try:
             llm = OllamaLLM(
-                model="llama3.2:1b",
-                temperature=0.1,
-                repeat_penalty=1.2,
-                num_predict=2000,
-                timeout=60
+                model=model_type,
+                context_window=config.LLM_CONTEXT_SIZE,
+                temperature=config.DEFAULT_TEMPERATURE,
+                repeat_penalty=config.DEFAULT_REPEAT_PENALTY,
+                num_predict=config.DEFAULT_NUM_PREDICT,
+                timeout=config.DEFAULT_TIMEOUT
             )
-            logger.debug("Successfully initialized fallback LLM model")
-        except Exception as e2:
-            logger.error(f"Error initializing fallback LLM: {e2}")
-            return f"Error: Could not initialize language model to process your query: {e2}"
+            logger.debug(f"Successfully initialized LLM with model {model_type}")
+        except Exception as e:
+            logger.error(f"Error initializing LLM with model {model_type}: {e}")
+            # Try fallback model
+            try:
+                llm = OllamaLLM(
+                    model=config.FALLBACK_MODELS[0],
+                    context_window=config.LLM_CONTEXT_SIZE,
+                    temperature=config.DEFAULT_TEMPERATURE,
+                    repeat_penalty=config.DEFAULT_REPEAT_PENALTY,
+                    num_predict=config.DEFAULT_NUM_PREDICT,
+                    timeout=config.DEFAULT_TIMEOUT
+                )
+                logger.debug("Successfully initialized fallback LLM model")
+            except Exception as e2:
+                logger.error(f"Error initializing fallback LLM: {e2}")
+                return f"Error: Could not initialize language model to process your query: {e2}"
     
     # Process each batch and collect results
     results = []
@@ -734,7 +763,6 @@ Your analysis of this batch:"""
             results.append(f"Error processing batch {i+1}: {e}")
     
     # Combine the results
-   
     combined_prompt = f"""You are providing a final answer to the user's question based on an analysis of {len(docs)} photos.
 The photos were analyzed in {len(formatted_batches)} batches, and below are the results from each batch.
 
@@ -748,15 +776,17 @@ BATCH ANALYSIS RESULTS:
 INSTRUCTIONS:
 1. Based on the batch analyses above, provide a comprehensive answer to the user's question
 2. List ALL relevant photos identified across ALL batches
-3. Include EVERY photo that was mentioned as relevant in ANY batch
+3. For EACH relevant photo, you MUST include:
+   - The photo number and filename
+   - A brief description specific to that photo
+   - Any available time/date information for that specific photo
+   - Any available location information for that specific photo
 4. Do not summarize or truncate the list of matches
-5. Reference each photo by its full identifier (e.g., "Photo 12 - filename.jpg")
+5. Format each photo's information in separate paragraphs
 6. Organize your response with a clear section titled "MATCHED PHOTOS:" that lists all matches
-7. Be thorough and do not omit any photos that were identified as relevant
+7. Never provide a generic description - each photo needs its own unique description
 
 Your final answer to the user's question:"""
-    
-    # ... rest of the function ...
     
     # Get the final response
     try:
