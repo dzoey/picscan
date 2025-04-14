@@ -59,6 +59,7 @@ class QueryClassifier:
     - "Get photos from California"
     - "What pictures have people in them?"
     - "I want to see images of mountains"
+    - "Show me pictures of children"
 
     Examples of FACTUAL queries:
     - "How many pictures were taken in 2022?"
@@ -111,9 +112,9 @@ class QueryClassifier:
         
         # Historical and general knowledge indicators
         knowledge_indicators = [
-            "who was", "what was", "when was", "where was", "why was",
+            "who was", "who were", "what was", "when was", "where was", "why was",
             "who is", "what is", "when is", "where is", "why is",
-            "who are", "what are", "when are", "where are", "why are",
+            "who are", "what are", "when are", "when did", "who made", "where are", "why are",
             "president", "war", "history", "capital", "country", "discovered",
             "invented", "founded", "created", "born", "died"
         ]

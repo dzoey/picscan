@@ -135,10 +135,13 @@ USER QUESTION: {user_text}
 PHOTO COLLECTION (BATCH {i+1}/{len(formatted_batches)}):
 {batch}
 
+CRITICAL INSTRUCTION: The descriptions provided for each photo are accurate and complete.
+DO NOT make up new descriptions or add imaginary details. Use ONLY the information provided.
+
 INSTRUCTIONS:
 1. Carefully analyze each photo in this batch
 2. Identify ALL photos that are relevant to the user's question
-3. For relevant photos, provide their number and a brief explanation of why they match
+3. For relevant photos, provide their number and why they match based ONLY on their actual descriptions
 4. If no photos in this batch match, state that clearly
 5. Be concise but thorough
 
@@ -165,6 +168,29 @@ def _extract_photo_references(text, doc_mapping, matched_images):
         if photo_num in doc_mapping:
             matched_images.add(photo_num)
 
+def _enforce_accurate_descriptions(response, doc_mapping):
+    """Replace any fabricated descriptions with the originals from the documents."""
+    # Start with a formatted header
+    processed_response = "Here are the photos that match your query:\n\n**MATCHED PHOTOS:**\n\n"
+    
+    # For each matched photo
+    for photo_num, details in doc_mapping.items():
+        filename = details["filename"]
+        description = details["content"].strip()
+        
+        # Extract metadata
+        metadata_parts = []
+        if "path" in details:
+            path = details["path"]
+        
+        # Format each photo's entry with the CORRECT description
+        photo_entry = f"**Photo {photo_num} - {filename}:**\n"
+        photo_entry += f"*Description:* {description}\n"
+        
+        processed_response += photo_entry + "\n"
+    
+    return processed_response
+
 def _generate_final_response(results, user_text, llm, doc_mapping, matched_images):
     """Generate final combined response."""
     combined_prompt = f"""You are providing a final answer to the user's question based on an analysis of photos.
@@ -177,17 +203,20 @@ BATCH ANALYSIS RESULTS:
 {"\n\n" + "-"*50 + "\n\n".join(results)}
 {"-"*50}
 
+CRITICAL INSTRUCTION: DO NOT INVENT OR FABRICATE DESCRIPTIONS.
+For each photo, use ONLY the exact description that was provided in the batch analysis.
+The photo descriptions provided in the batch analysis are accurate and complete.
+
 INSTRUCTIONS:
 1. Based on the batch analyses above, provide a comprehensive answer to the user's question
 2. List ALL relevant photos identified across ALL batches
 3. For EACH relevant photo, include:
    - The photo number and filename
-   - A brief description specific to that photo
+   - The EXACT description from the original batch (DO NOT MODIFY OR EMBELLISH)
    - Any available time/date information
    - Any available location information
 4. Format each photo's information in separate paragraphs
 5. Organize your response with a section titled "MATCHED PHOTOS:" that lists all matches
-6. Each photo needs its own unique description
 
 Your final answer to the user's question:"""
     
@@ -201,6 +230,9 @@ Your final answer to the user's question:"""
         matched_doc_mapping = {k: v for k, v in doc_mapping.items() if k in matched_images}
         
         logger.debug(f"Found {len(matched_images)} matched images")
+        
+        # NEW: Post-process to ensure accurate descriptions
+        final_response = _enforce_accurate_descriptions(final_response, matched_doc_mapping)
         
         return {
             "response": final_response, 
