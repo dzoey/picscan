@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 from pathlib import Path
+import importlib
 
 # Import configuration
 import config
@@ -8,19 +9,16 @@ import config
 # Import utilities
 from utils.logging_config import logger
 from utils.image import encode_images_to_base64
+import rag.query_processor
+from rag.query_processor import get_processor
+from rag.processor.llm_manager import get_available_models
 
-# Import RAG components
-# CHANGE THIS SECTION:
-import importlib
-import rag.processor
-importlib.reload(rag.processor)
-# Get a processor instance instead of direct function
-from rag.processor import get_processor, get_available_models
-processor = get_processor()  # Create an instance to use
 
 # Rest of your imports
 from rag.embeddings import embedding_manager
 from werkzeug.utils import secure_filename
+
+importlib.reload(rag.query_processor)
 
 # Initialize Flask application
 app = Flask(__name__)
@@ -28,6 +26,7 @@ app = Flask(__name__)
 # Initialize components at startup
 logger.debug("Initializing application components")
 embedding_manager.initialize()
+processor = get_processor()  # Create an instance to use
 
 @app.route('/')
 def index():
